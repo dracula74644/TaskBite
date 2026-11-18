@@ -1,0 +1,91 @@
+package com.dracula.taskbite
+
+import androidx.room.withTransaction
+import org.json.JSONArray
+import org.json.JSONObject
+import java.util.UUID
+
+object Backup {
+    const val MAX_BYTES = 10 * 1024 * 1024
+    fun readLimited(input: java.io.InputStream): ByteArray {
+        val output = java.io.ByteArrayOutputStream()
+        val buffer = ByteArray(8192)
+        while (true) {
+            val count = input.read(buffer)
+            if (count < 0) break
+            require(output.size() + count <= MAX_BYTES) { "Backup exceeds 10 MB." }
+            output.write(buffer, 0, count)
+        }
+        return output.toByteArray()
+    }
+    data class Contents(val tasks: List<Task>, val events: List<TaskEvent>)
+    suspend fun export(repository: TaskRepository): String = repository.database.withTransaction {
+        encode(Contents(repository.dao.allTasks(), repository.dao.allEvents()))
+    }
+    fun encode(contents: Contents): String = JSONObject().apply {
+        put("app", "TaskBite")
+        put("formatVersion", 1)
+        put("exportedAt", System.currentTimeMillis())
+        put("tasks", JSONArray().apply { contents.tasks.forEach { t -> put(JSONObject().apply {
+            put("id", t.id); put("title", t.title); put("notes", t.notes)
+            put("dueAt", t.dueAt); put("minutes", t.minutes); put("priority", t.priority)
+            put("createdAt", t.createdAt); put("updatedAt", t.updatedAt)
+            put("completedAt", t.completedAt ?: JSONObject.NULL)
+            put("startedAt", t.startedAt ?: JSONObject.NULL)
+            put("archived", t.archived); put("remindAfter", t.remindAfter)
+        }) } })
+        put("events", JSONArray().apply { contents.events.forEach { e -> put(JSONObject().apply {
+            put("id", e.id); put("taskId", e.taskId); put("title", e.title)
+            put("kind", e.kind); put("at", e.at); put("detail", e.detail)
+        }) } })
+    }.toString(2)
+
+    fun decode(text: String): Contents {
+        require(text.toByteArray(Charsets.UTF_8).size <= MAX_BYTES) { "Backup is larger than 10 MB." }
+        val root = JSONObject(text)
+        require(root.getString("app") == "TaskBite" && root.getInt("formatVersion") == 1) { "Unsupported backup format." }
+        val tasksJson = root.getJSONArray("tasks")
+        val eventsJson = root.getJSONArray("events")
+        require(tasksJson.length() <= 10_000 && eventsJson.length() <= 100_000) { "Backup has too many records." }
+        fun JSONObject.timestamp(name: String): Long = getLong(name).also { require(it in 0..253402300799999L) { "Invalid date." } }
+        fun JSONObject.optionalTime(name: String): Long? = if (isNull(name)) null else timestamp(name)
+        fun JSONObject.id(name: String): String = getString(name).also {
+            require(UUID.fromString(it).toString() == it) { "Invalid record identifier." }
+        }
+        val tasks = (0 until tasksJson.length()).map { index -> tasksJson.getJSONObject(index).let { t ->
+            Task(id = t.id("id"), title = t.getString("title"), notes = t.getString("notes"),
+                dueAt = t.timestamp("dueAt"), minutes = t.getInt("minutes"), priority = t.getInt("priority"),
+                createdAt = t.timestamp("createdAt"), updatedAt = t.timestamp("updatedAt"),
+                completedAt = t.optionalTime("completedAt"), startedAt = t.optionalTime("startedAt"),
+                archived = t.getBoolean("archived"), remindAfter = t.timestamp("remindAfter"))
+                .also { require(it.title.isNotBlank() && it.title.length <= 200 && it.notes.length <= 4000 &&
+                    it.minutes in 1..1440 && it.priority in 0..2 && it.updatedAt >= it.createdAt) { "Invalid task." } }
+        } }
+        val ids = tasks.map { it.id }.toSet()
+        require(ids.size == tasks.size) { "Duplicate tasks." }
+        val events = (0 until eventsJson.length()).map { index -> eventsJson.getJSONObject(index).let { e ->
+            TaskEvent(id = e.id("id"), taskId = e.id("taskId"), title = e.getString("title"),
+                kind = e.getString("kind"), at = e.timestamp("at"), detail = e.getString("detail"))
+                .also { require(it.taskId in ids && it.title.isNotBlank() && it.title.length <= 200 &&
+                    it.detail.length <= 4000 && it.kind in setOf("CREATED", "EDITED", "STARTED", "COMPLETED", "REOPENED", "SNOOZED", "ARCHIVED", "RESTORED")) { "Invalid history record." } }
+        } }
+        require(events.map { it.id }.toSet().size == events.size) { "Duplicate history records." }
+        return Contents(tasks, events)
+    }
+    /** Validate everything first, then merge atomically. A stale backup never overwrites newer work. */
+    suspend fun restore(repository: TaskRepository, text: String): Int {
+        val contents = decode(text)
+        return repository.database.withTransaction {
+            var restored = 0
+            contents.tasks.forEach { task ->
+                val existing = repository.dao.task(task.id)
+                if (existing == null || task.updatedAt > existing.updatedAt) {
+                    repository.dao.put(task)
+                    restored++
+                }
+            }
+            contents.events.forEach { repository.dao.event(it) }
+            restored
+        }
+    }
+}
