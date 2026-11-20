@@ -1,0 +1,223 @@
+{
+  "name": "Bite Sweet",
+  "status": "Scripts only; awaiting real human recordings.",
+  "performance": "Affectionate, conversational teasing for your partner. Smile gently, use your natural voice, and sound encouraging. No imitation, music, or sound effects.",
+  "categories": {
+    "PLAN_DAY": [
+      {
+        "file": "PLAN_DAY/01.wav",
+        "line": "Babe, even your to-do list is playing hard to get."
+      },
+      {
+        "file": "PLAN_DAY/02.wav",
+        "line": "One little task, sweetheart. Let me cheer you on."
+      },
+      {
+        "file": "PLAN_DAY/03.wav",
+        "line": "One small plan, babe. Let us make today yours."
+      },
+      {
+        "file": "PLAN_DAY/04.wav",
+        "line": "Empty list, love? Give me one thing to celebrate."
+      }
+    ],
+    "CREATED": [
+      {
+        "file": "CREATED/01.wav",
+        "line": "Look at you making plans, cutie. I'm taking notes."
+      },
+      {
+        "file": "CREATED/02.wav",
+        "line": "Added, babe. Now comes the adorable part: doing it."
+      },
+      {
+        "file": "CREATED/03.wav",
+        "line": "Another little plan, love. I am cheering already."
+      },
+      {
+        "file": "CREATED/04.wav",
+        "line": "Added, sweetheart. We make a pretty good team."
+      }
+    ],
+    "STARTED": [
+      {
+        "file": "STARTED/01.wav",
+        "line": "There you go, babe. That's my favorite plot twist."
+      },
+      {
+        "file": "STARTED/02.wav",
+        "line": "Look at you go, cutie. I'm cheering already."
+      },
+      {
+        "file": "STARTED/03.wav",
+        "line": "Look at you go, love. Extremely attractive productivity."
+      },
+      {
+        "file": "STARTED/04.wav",
+        "line": "You started, babe. I knew you had this."
+      }
+    ],
+    "COMPLETED": [
+      {
+        "file": "COMPLETED/01.wav",
+        "line": "You did it, babe. Proud of you, obviously."
+      },
+      {
+        "file": "COMPLETED/02.wav",
+        "line": "Task finished. Cute and capable? Show-off."
+      },
+      {
+        "file": "COMPLETED/03.wav",
+        "line": "Done already, love? Leave some brilliance for tomorrow."
+      },
+      {
+        "file": "COMPLETED/04.wav",
+        "line": "That is my favorite overachiever. Nicely done, sweetheart."
+      }
+    ],
+    "COMPLETED_LATE": [
+      {
+        "file": "COMPLETED_LATE/01.wav",
+        "line": "Fashionably late, babe. Still proud you finished."
+      },
+      {
+        "file": "COMPLETED_LATE/02.wav",
+        "line": "Late entrance, lovely finish. Very you, sweetheart."
+      },
+      {
+        "file": "COMPLETED_LATE/03.wav",
+        "line": "You finished, babe. I saved your imaginary victory hug."
+      },
+      {
+        "file": "COMPLETED_LATE/04.wav",
+        "line": "A little late, love. Still very proud of you."
+      }
+    ],
+    "OVERDUE": [
+      {
+        "file": "OVERDUE/01.wav",
+        "line": "Babe, that deadline wasn't playing hard to get."
+      },
+      {
+        "file": "OVERDUE/02.wav",
+        "line": "Sweetheart, your task is waiting for its big moment."
+      },
+      {
+        "file": "OVERDUE/03.wav",
+        "line": "Babe, your deadline is doing the dramatic sigh now."
+      },
+      {
+        "file": "OVERDUE/04.wav",
+        "line": "Your task misses you, love. I understand the feeling."
+      }
+    ],
+    "SNOOZE": [
+      {
+        "file": "SNOOZE/01.wav",
+        "line": "Later again, babe? Your task is practicing its pout."
+      },
+      {
+        "file": "SNOOZE/02.wav",
+        "line": "Sweetheart, that task has had enough beauty sleep."
+      },
+      {
+        "file": "SNOOZE/03.wav",
+        "line": "Later, sweetheart? Your task is getting adorably clingy."
+      },
+      {
+        "file": "SNOOZE/04.wav",
+        "line": "Rescheduled, love. Your future self expects a little effort."
+      }
+    ],
+    "SNOOZE_REPEAT": [
+      {
+        "file": "SNOOZE_REPEAT/01.wav",
+        "line": "Babe, this task has more rain checks than our dates."
+      },
+      {
+        "file": "SNOOZE_REPEAT/02.wav",
+        "line": "Another tomorrow? Sweetheart, even procrastination needs a day off."
+      },
+      {
+        "file": "SNOOZE_REPEAT/03.wav",
+        "line": "Babe, this task has more comebacks than our jokes."
+      },
+      {
+        "file": "SNOOZE_REPEAT/04.wav",
+        "line": "Again, sweetheart? That checkbox is developing trust issues."
+      }
+    ],
+    "ABANDON": [
+      {
+        "file": "ABANDON/01.wav",
+        "line": "Back already, cutie? Your little missions saved your seat."
+      },
+      {
+        "file": "ABANDON/02.wav",
+        "line": "Babe, browsing the list doesn't count as a date."
+      },
+      {
+        "file": "ABANDON/03.wav",
+        "line": "Back again, love? Your task saved the best seat."
+      },
+      {
+        "file": "ABANDON/04.wav",
+        "line": "Missed you, sweetheart. The list was terrible company."
+      }
+    ],
+    "IDLE": [
+      {
+        "file": "IDLE/01.wav",
+        "line": "Babe, your little missions could use a little attention."
+      },
+      {
+        "file": "IDLE/02.wav",
+        "line": "Sweetheart, one small win would look good on you."
+      },
+      {
+        "file": "IDLE/03.wav",
+        "line": "Thinking looks cute, babe. One small step looks cuter."
+      },
+      {
+        "file": "IDLE/04.wav",
+        "line": "Still there, love? Your task wants a little attention."
+      }
+    ],
+    "TINY": [
+      {
+        "file": "TINY/01.wav",
+        "line": "Babe, this takes less time than picking a selfie."
+      },
+      {
+        "file": "TINY/02.wav",
+        "line": "Tiny task, sweetheart. You're giving it main-character drama."
+      },
+      {
+        "file": "TINY/03.wav",
+        "line": "Tiny task, sweetheart. You can beat my dramatic sigh."
+      },
+      {
+        "file": "TINY/04.wav",
+        "line": "Five minutes, babe. Then you can resume being adorable."
+      }
+    ],
+    "NOTIFICATION_CLEARED": [
+      {
+        "file": "NOTIFICATION_CLEARED/01.wav",
+        "line": "Babe, smooth swipe. One little task next?"
+      },
+      {
+        "file": "NOTIFICATION_CLEARED/02.wav",
+        "line": "Cute dodge, sweetheart. Your plans are still waiting."
+      },
+      {
+        "file": "NOTIFICATION_CLEARED/03.wav",
+        "line": "Nice swipe, babe. The task still wants your number."
+      },
+      {
+        "file": "NOTIFICATION_CLEARED/04.wav",
+        "line": "Message dismissed, sweetheart. Your little mission is still waiting."
+      }
+    ]
+  }
+}

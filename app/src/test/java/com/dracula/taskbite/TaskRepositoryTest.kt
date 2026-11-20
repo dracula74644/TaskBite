@@ -125,6 +125,97 @@ class TaskRepositoryTest {
         val json = Backup.encode(Backup.Contents(listOf(t, t), emptyList()))
         assertThrows(IllegalArgumentException::class.java) { Backup.decode(json) }
     }
+    @Test fun deleteRemovesOnlySelectedTaskAndHistoryAndRejectsStaleWrites() = runBlocking {
+        val removed = task("Delete this task")
+        val kept = task("Keep this task")
+        repository.save(removed); repository.complete(removed.id, true); repository.save(kept)
+        var refreshes = 0
+        val observed = TaskRepository(db) { refreshes++ }
+        assertTrue(observed.delete(removed.id))
+        assertFalse(observed.delete(removed.id))
+        assertEquals(1, refreshes)
+        assertNull(repository.dao.task(removed.id))
+        assertTrue(repository.dao.allEvents().all { it.taskId == kept.id })
+        assertNotNull(repository.dao.task(kept.id))
+        assertNotNull(repository.dao.deletion(removed.id))
+        assertFalse(repository.save(removed.copy(title = "Stale editor")))
+        assertFalse(repository.complete(removed.id, true))
+    }
+    @Test fun oldBackupsCannotResurrectDeletedTasksAndDeletionRoundTrips() = runBlocking {
+        val removed = task()
+        repository.save(removed)
+        val before = Backup.export(repository)
+        repository.delete(removed.id)
+        assertEquals(0, Backup.restore(repository, before))
+        assertTrue(repository.dao.allTasks().isEmpty())
+        assertTrue(repository.dao.allEvents().isEmpty())
+        val after = Backup.export(repository)
+        val other = Room.inMemoryDatabaseBuilder(RuntimeEnvironment.getApplication(), TaskDatabase::class.java).build()
+        try {
+            val target = TaskRepository(other)
+            assertEquals(1, Backup.restore(target, before))
+            Backup.restore(target, after)
+            assertTrue(target.dao.allTasks().isEmpty())
+            assertTrue(target.dao.allEvents().isEmpty())
+            assertEquals(0, Backup.restore(target, before))
+            assertEquals(repository.dao.allDeletions(), target.dao.allDeletions())
+        } finally { other.close() }
+    }
+    @Test fun malformedDeletionBackupCannotPartiallyRemoveLocalTasks() = runBlocking {
+        val kept = task("Keep during failed restore")
+        repository.save(kept)
+        val contents = Backup.Contents(emptyList(), emptyList(), listOf(TaskDeletion(kept.id), TaskDeletion("invalid-id")))
+        try { Backup.restore(repository, Backup.encode(contents)); fail("Malformed deletion marker accepted") }
+        catch (_: IllegalArgumentException) { }
+        assertNotNull(repository.dao.task(kept.id))
+        assertEquals(1, repository.dao.allEvents().size)
+        assertTrue(repository.dao.allDeletions().isEmpty())
+    }
+    @Test fun versionOneBackupStillImports() = runBlocking {
+        val t = task()
+        val json = org.json.JSONObject(Backup.encode(Backup.Contents(listOf(t), emptyList())))
+        json.put("formatVersion", 1); json.remove("deletions")
+        assertEquals(1, Backup.restore(repository, json.toString()))
+        assertEquals(t.title, repository.dao.task(t.id)!!.title)
+    }
+    @Test fun versionOneDatabaseMigratesWithoutLosingExistingTasksOrHistory() { assertMigration(1) }
+    @Test fun versionTwoDatabaseMigratesWithTasksHistoryAndDeletionMarkersIntact() { assertMigration(2) }
+    private fun assertMigration(version: Int) = runBlocking<Unit> {
+        val context = RuntimeEnvironment.getApplication()
+        val name = "real-v$version-${System.nanoTime()}.db"
+        val path = context.getDatabasePath(name)
+        path.parentFile!!.mkdirs()
+        val schema = org.json.JSONObject(java.io.File("schemas/com.dracula.taskbite.TaskDatabase/$version.json").readText()).getJSONObject("database")
+        val t = task("Existing v1 task")
+        val eventId = java.util.UUID.randomUUID().toString()
+        val deletedId = java.util.UUID.randomUUID().toString()
+        android.database.sqlite.SQLiteDatabase.openOrCreateDatabase(path, null).use { raw ->
+            val entities = schema.getJSONArray("entities")
+            for (index in 0 until entities.length()) {
+                val entity = entities.getJSONObject(index)
+                raw.execSQL(entity.getString("createSql").replace("\${TABLE_NAME}", entity.getString("tableName")))
+                val indices = entity.getJSONArray("indices")
+                for (i in 0 until indices.length()) raw.execSQL(indices.getJSONObject(i).getString("createSql").replace("\${TABLE_NAME}", entity.getString("tableName")))
+            }
+            raw.execSQL("CREATE TABLE room_master_table (id INTEGER PRIMARY KEY, identity_hash TEXT)")
+            raw.execSQL("INSERT INTO room_master_table VALUES(42, ?)", arrayOf(schema.getString("identityHash")))
+            raw.execSQL("INSERT INTO tasks VALUES(?, ?, '', ?, 15, 1, ?, ?, NULL, NULL, 0, ?)", arrayOf<Any>(t.id, t.title, t.dueAt, t.createdAt, t.updatedAt, t.remindAfter))
+            raw.execSQL("INSERT INTO events VALUES(?, ?, ?, 'CREATED', ?, '')", arrayOf<Any>(eventId, t.id, t.title, t.createdAt))
+            if (version == 2) raw.execSQL("INSERT INTO deleted_tasks VALUES(?, ?)", arrayOf<Any>(deletedId, t.createdAt))
+            raw.version = version
+        }
+        val migrated = TaskDatabase.open(context, name)
+        try {
+            assertEquals(t.title, migrated.dao().task(t.id)!!.title)
+            assertEquals(eventId, migrated.dao().allEvents().single().id)
+            assertEquals(RepeatRule.NONE.name, migrated.dao().task(t.id)!!.repeatRule)
+            assertEquals(0, migrated.dao().task(t.id)!!.snoozeCount)
+            assertNull(migrated.dao().task(t.id)!!.nextOccurrenceId)
+            if (version == 1) assertTrue(migrated.dao().allDeletions().isEmpty())
+            else assertEquals(deletedId, migrated.dao().allDeletions().single().id)
+            assertTrue(TaskRepository(migrated).delete(t.id))
+        } finally { migrated.close(); context.deleteDatabase(name) }
+    }
     @Test fun missingMigrationFailsWithoutErasingData() = runBlocking {
         val context = RuntimeEnvironment.getApplication()
         val name = "migration-guard-${System.nanoTime()}.db"
@@ -133,7 +224,7 @@ class TaskRepositoryTest {
         TaskRepository(first).save(t)
         first.close()
         val path = context.getDatabasePath(name)
-        android.database.sqlite.SQLiteDatabase.openDatabase(path.path, null, 0).use { it.version = 2 }
+        android.database.sqlite.SQLiteDatabase.openDatabase(path.path, null, 0).use { it.version = 5 }
         val reopened = TaskDatabase.open(context, name)
         try {
             try { reopened.dao().allTasks(); fail("Missing migration should fail closed") }

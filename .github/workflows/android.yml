@@ -1,0 +1,34 @@
+name: Android checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Test and lint the public build
+        run: ./gradlew --no-daemon --max-workers=2 -PincludePersonalVoices=false testDebugUnitTest lintDebug assembleDebug
+      - name: Compile the isolated phone test app
+        run: ./gradlew --no-daemon --max-workers=2 -PincludePersonalVoices=false -PdeviceChecks=true assembleDebug assembleDebugAndroidTest
+      - name: Keep test reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: android-test-reports
+          path: |
+            app/build/reports/tests/
+            app/build/reports/lint-results-debug.*
+          retention-days: 14

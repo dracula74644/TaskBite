@@ -3,4 +3,7 @@
     <include domain="database" path="taskbite.db-wal" />
     <include domain="database" path="taskbite.db-shm" />
     <include domain="sharedpref" path="taskbite.xml" />
+    <include domain="sharedpref" path="update_preferences.xml" />
+    <include domain="file" path="voice_clips/" />
+    <include domain="file" path="personal_voice_packs/" />
 </full-backup-content>

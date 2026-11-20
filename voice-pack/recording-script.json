@@ -1,0 +1,223 @@
+{
+  "name": "Bite Originals",
+  "status": "Awaiting human recordings; this file contains scripts, not audio.",
+  "performance": "Playful, conversational sidekick. Warm sarcasm; never genuinely cruel. Natural pace, one complete sentence per file. No music or sound effects.",
+  "categories": {
+    "CREATED": [
+      {
+        "file": "CREATED/01.wav",
+        "line": "Another side quest. Your collection is getting suspicious."
+      },
+      {
+        "file": "CREATED/02.wav",
+        "line": "Added. A bold move from our planning department."
+      },
+      {
+        "file": "CREATED/03.wav",
+        "line": "A fresh task. Let us try the finishing part."
+      },
+      {
+        "file": "CREATED/04.wav",
+        "line": "Your list grows. Your legend awaits a checkmark."
+      }
+    ],
+    "STARTED": [
+      {
+        "file": "STARTED/01.wav",
+        "line": "Movement detected. Finally, some plot development."
+      },
+      {
+        "file": "STARTED/02.wav",
+        "line": "You started! I was running out of dramatic sighs."
+      },
+      {
+        "file": "STARTED/03.wav",
+        "line": "There you go. The loading screen finally ended."
+      },
+      {
+        "file": "STARTED/04.wav",
+        "line": "First step taken. Your couch will recover."
+      }
+    ],
+    "COMPLETED": [
+      {
+        "file": "COMPLETED/01.wav",
+        "line": "You finished! I had a whole roast prepared."
+      },
+      {
+        "file": "COMPLETED/02.wav",
+        "line": "Task defeated. Your reward is slightly less chaos."
+      },
+      {
+        "file": "COMPLETED/03.wav",
+        "line": "Look at you, collecting victories instead of excuses."
+      },
+      {
+        "file": "COMPLETED/04.wav",
+        "line": "One less task. Suspiciously competent behavior."
+      }
+    ],
+    "COMPLETED_LATE": [
+      {
+        "file": "COMPLETED_LATE/01.wav",
+        "line": "Late, but done. The missing-task poster can come down."
+      },
+      {
+        "file": "COMPLETED_LATE/02.wav",
+        "line": "The deadline forgives you. I need a minute."
+      },
+      {
+        "file": "COMPLETED_LATE/03.wav",
+        "line": "Finished at last. We can cancel the search party."
+      },
+      {
+        "file": "COMPLETED_LATE/04.wav",
+        "line": "A late victory still deserves a tiny parade."
+      }
+    ],
+    "OVERDUE": [
+      {
+        "file": "OVERDUE/01.wav",
+        "line": "Your deadline called. I said you were buffering."
+      },
+      {
+        "file": "OVERDUE/02.wav",
+        "line": "Plot twist: ignoring it still has not finished it."
+      },
+      {
+        "file": "OVERDUE/03.wav",
+        "line": "Your task is aging like a forgotten sandwich."
+      },
+      {
+        "file": "OVERDUE/04.wav",
+        "line": "That deadline left. Your task stayed for dinner."
+      }
+    ],
+    "SNOOZE": [
+      {
+        "file": "SNOOZE/01.wav",
+        "line": "Later again? Your future self just requested a meeting."
+      },
+      {
+        "file": "SNOOZE/02.wav",
+        "line": "Rescheduled. Your future self just requested a meeting."
+      },
+      {
+        "file": "SNOOZE/03.wav",
+        "line": "Later it is. The task packed an overnight bag."
+      },
+      {
+        "file": "SNOOZE/04.wav",
+        "line": "Rescheduled. The checkbox is practicing patience."
+      }
+    ],
+    "SNOOZE_REPEAT": [
+      {
+        "file": "SNOOZE_REPEAT/01.wav",
+        "line": "This task has visited tomorrow more than you have."
+      },
+      {
+        "file": "SNOOZE_REPEAT/02.wav",
+        "line": "Another postponement. Even the snooze button needs a break."
+      },
+      {
+        "file": "SNOOZE_REPEAT/03.wav",
+        "line": "This task needs frequent flyer points for postponements."
+      },
+      {
+        "file": "SNOOZE_REPEAT/04.wav",
+        "line": "Another delay. The calendar has started recognizing you."
+      }
+    ],
+    "IDLE": [
+      {
+        "file": "IDLE/01.wav",
+        "line": "Your list called. It misses those checkmarks."
+      },
+      {
+        "file": "IDLE/02.wav",
+        "line": "Plot twist available: finish one small thing."
+      },
+      {
+        "file": "IDLE/03.wav",
+        "line": "The staring contest is over. Your checkbox won."
+      },
+      {
+        "file": "IDLE/04.wav",
+        "line": "One small move. We can negotiate the sequel later."
+      }
+    ],
+    "TINY": [
+      {
+        "file": "TINY/01.wav",
+        "line": "Tiny task. Huge suspense. Where is the movie trailer?"
+      },
+      {
+        "file": "TINY/02.wav",
+        "line": "We have discussed this longer than it actually takes."
+      },
+      {
+        "file": "TINY/03.wav",
+        "line": "Five minutes of effort. A full season of suspense."
+      },
+      {
+        "file": "TINY/04.wav",
+        "line": "This task is smaller than your excuse collection."
+      }
+    ],
+    "ABANDON": [
+      {
+        "file": "ABANDON/01.wav",
+        "line": "Welcome back. The checkboxes missed your complete lack of attention."
+      },
+      {
+        "file": "ABANDON/02.wav",
+        "line": "Back already? Your responsibilities saved you a seat."
+      },
+      {
+        "file": "ABANDON/03.wav",
+        "line": "Your tasks kept your seat warm. Very considerate."
+      },
+      {
+        "file": "ABANDON/04.wav",
+        "line": "The list survived your disappearing act. Ready now?"
+      }
+    ],
+    "PLAN_DAY": [
+      {
+        "file": "PLAN_DAY/01.wav",
+        "line": "No tasks? Bold of you to call that a plan."
+      },
+      {
+        "file": "PLAN_DAY/02.wav",
+        "line": "One tiny task. Give this day a plot."
+      },
+      {
+        "file": "PLAN_DAY/03.wav",
+        "line": "Give today one mission. Even a tiny one counts."
+      },
+      {
+        "file": "PLAN_DAY/04.wav",
+        "line": "Blank canvas. Excellent time for one small task."
+      }
+    ],
+    "NOTIFICATION_CLEARED": [
+      {
+        "file": "NOTIFICATION_CLEARED/01.wav",
+        "line": "Nice swipe. Your plans didn't move."
+      },
+      {
+        "file": "NOTIFICATION_CLEARED/02.wav",
+        "line": "Notification gone. Procrastination remains undefeated."
+      },
+      {
+        "file": "NOTIFICATION_CLEARED/03.wav",
+        "line": "Excellent swipe technique. Now try a checkmark."
+      },
+      {
+        "file": "NOTIFICATION_CLEARED/04.wav",
+        "line": "You cleared the message. The mission remains."
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+Super Dialogue Audio Pack v1
+Produced by Dillon Becker — https://dillonbecker.com
+Source: https://dillonbecker.itch.io/sdap
+Performers included: Alex Brodie, Sean Lenhart, Meghan Christian.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+License: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Changes: complete recorded phrases trimmed and joined into situation-specific reactions with short pauses; loudness normalized; mono 16-bit PCM WAV, 44.1 kHz; metadata removed. No synthetic speech or voice cloning.
+No endorsement by the producer or performers is implied.
+See catalog.json for original filenames and the source archive checksum.

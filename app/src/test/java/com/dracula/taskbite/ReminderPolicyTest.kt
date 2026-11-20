@@ -5,11 +5,24 @@ import org.junit.Test
 
 class ReminderPolicyTest {
     @Test fun allRoastsAreUnderTwelveWords() {
-        Roasts.lines.values.flatten().forEach { line ->
+        (Roasts.lines.values.flatten() + Roasts.sweetLines.values.flatten()).forEach { line ->
             assertTrue("Too long: $line", line.trim().split(Regex("\\s+")).size < 12)
         }
+        assertEquals(RoastKind.entries.toSet(), Roasts.sweetLines.keys)
         listOf(RoastKind.OVERDUE, RoastKind.SNOOZE, RoastKind.ABANDON, RoastKind.IDLE, RoastKind.TINY).forEach {
             assertEquals(5, Roasts.lines.getValue(it).size)
+        }
+    }
+    @Test fun sweetStyleIsOptionalAndRotatesItsOwnLines() {
+        RoastKind.entries.forEach { kind ->
+            assertTrue(Roasts.pick(kind) in Roasts.lines.getValue(kind))
+            var previous = Roasts.pick(kind, TeasingStyle.SWEET)
+            repeat(10) {
+                val line = Roasts.pick(kind, TeasingStyle.SWEET)
+                assertTrue(line in Roasts.sweetLines.getValue(kind))
+                assertNotEquals(previous, line)
+                previous = line
+            }
         }
     }
     @Test fun noImmediateRepeatForOneCategory() {

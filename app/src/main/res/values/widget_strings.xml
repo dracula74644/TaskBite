@@ -1,0 +1,5 @@
+<resources>
+    <string name="widget_name">TaskBite · Today</string>
+    <string name="widget_description">Today’s tasks, one-tap completion, pending counts, quick-add and voice entry. Resize for more detail.</string>
+    <string name="widget_loading">Loading your missions…</string>
+</resources>

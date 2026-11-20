@@ -1,0 +1,864 @@
+{
+  "source": "https://dillonbecker.itch.io/sdap",
+  "producer": "Dillon Becker",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "archiveSha256": "3994d25906f65db25718d9bd2f256eb6af7b1cb4d4ea8c4936d6e57056c639a3",
+  "edits": "Silence trimmed, complete phrases joined with 160 ms pauses, loudness normalized, mono PCM16 44.1 kHz.",
+  "actors": [
+    {
+      "id": "alex",
+      "name": "Alex Brodie",
+      "description": "Edited human reactions",
+      "categories": {
+        "CREATED": [
+          {
+            "asset": "voices/reaction_created_0_alex.wav",
+            "line": "Alright. Get ready.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_9_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_8_alex.wav"
+            ],
+            "sha256": "65f4293a136add27bf13c3659f6a2ddea31711c906fd5423500771d0d9f836d5"
+          },
+          {
+            "asset": "voices/reaction_created_1_alex.wav",
+            "line": "You got it. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_4_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_7_alex.wav"
+            ],
+            "sha256": "2a819c71bd4ce8e2bd1f4df59a82b6a8ebb49e5c10ed1ec3770d41e4895ce3c3"
+          }
+        ],
+        "STARTED": [
+          {
+            "asset": "voices/reaction_started_0_alex.wav",
+            "line": "3\u2026 2\u2026 1\u2026 Go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_9_alex.wav"
+            ],
+            "sha256": "b18be92f858f46b585e7a50e5301041a82d43306523cbc8da00984ff38e6fac8"
+          },
+          {
+            "asset": "voices/reaction_started_1_alex.wav",
+            "line": "Let\u2019s go! Good luck.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_7_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/4 - Farewell/Male/Alex Brodie/farewell_9_alex.wav"
+            ],
+            "sha256": "6c0ef4d478ac0ad05ad6e8e65135f6da6daee8dfa935cfa36f8115cf0d61985c"
+          }
+        ],
+        "COMPLETED": [
+          {
+            "asset": "voices/reaction_completed_0_alex.wav",
+            "line": "Objective complete. Wow!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/1 - Completion/Male/Alex Brodie/completion_8_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_10_alex.wav"
+            ],
+            "sha256": "11f2dfc75b61236c55ca42d7b4a980ec19633c8a1fd3af9017d334fa6d414d23"
+          },
+          {
+            "asset": "voices/reaction_completed_1_alex.wav",
+            "line": "All done. [Laughter]",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/1 - Completion/Male/Alex Brodie/completion_1_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_12_alex.wav"
+            ],
+            "sha256": "689a9fd0eb0566eed0175a8a2eaf5837bc3ee4377fc63e417d7ddcd53c95b71e"
+          }
+        ],
+        "SNOOZE": [
+          {
+            "asset": "voices/reaction_snooze_0_alex.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_17_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Alex Brodie/refusal_2_alex.wav"
+            ],
+            "sha256": "532a23771adc4dc90945cd4afd8016bc9a270668c2513240a65dcdcdd4db84f8"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_alex.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Alex Brodie/refusal_9_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_7_alex.wav"
+            ],
+            "sha256": "3be300fcc755b8ace4f10b958de25627ec3932d132bf274dd065b1c58ad7269b"
+          }
+        ],
+        "OVERDUE": [
+          {
+            "asset": "voices/reaction_overdue_0_alex.wav",
+            "line": "Hey! Get ready. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/3 - Greeting/Male/Alex Brodie/greeting_3_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_8_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_7_alex.wav"
+            ],
+            "sha256": "36687dcc825b5842c61382f05ca46c870656f73c9b5c852641764cab81968741"
+          },
+          {
+            "asset": "voices/reaction_overdue_1_alex.wav",
+            "line": "[Clears throat] On it.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_13_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_10_alex.wav"
+            ],
+            "sha256": "dd8e897ca8861988ef8a2aec29e8bb41733c29eac7c4a91614913a3d82c4cb7c"
+          }
+        ],
+        "ABANDON": [
+          {
+            "asset": "voices/reaction_snooze_0_alex.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_17_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Alex Brodie/refusal_2_alex.wav"
+            ],
+            "sha256": "532a23771adc4dc90945cd4afd8016bc9a270668c2513240a65dcdcdd4db84f8"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_alex.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Alex Brodie/refusal_9_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_7_alex.wav"
+            ],
+            "sha256": "3be300fcc755b8ace4f10b958de25627ec3932d132bf274dd065b1c58ad7269b"
+          },
+          {
+            "asset": "voices/reaction_tiny_0_alex.wav",
+            "line": "Hmm\u2026 Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_2_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_7_alex.wav"
+            ],
+            "sha256": "01e3fbb7e49763da4e9814d1b322237bacecfffe395f997be36ea4438bf027d5"
+          },
+          {
+            "asset": "voices/reaction_created_0_alex.wav",
+            "line": "Alright. Get ready.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_9_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_8_alex.wav"
+            ],
+            "sha256": "65f4293a136add27bf13c3659f6a2ddea31711c906fd5423500771d0d9f836d5"
+          },
+          {
+            "asset": "voices/reaction_started_0_alex.wav",
+            "line": "3\u2026 2\u2026 1\u2026 Go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_9_alex.wav"
+            ],
+            "sha256": "b18be92f858f46b585e7a50e5301041a82d43306523cbc8da00984ff38e6fac8"
+          }
+        ],
+        "IDLE": [
+          {
+            "asset": "voices/reaction_tiny_0_alex.wav",
+            "line": "Hmm\u2026 Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_2_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_7_alex.wav"
+            ],
+            "sha256": "01e3fbb7e49763da4e9814d1b322237bacecfffe395f997be36ea4438bf027d5"
+          },
+          {
+            "asset": "voices/reaction_snooze_0_alex.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_17_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Alex Brodie/refusal_2_alex.wav"
+            ],
+            "sha256": "532a23771adc4dc90945cd4afd8016bc9a270668c2513240a65dcdcdd4db84f8"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_alex.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Alex Brodie/refusal_9_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_7_alex.wav"
+            ],
+            "sha256": "3be300fcc755b8ace4f10b958de25627ec3932d132bf274dd065b1c58ad7269b"
+          },
+          {
+            "asset": "voices/reaction_created_0_alex.wav",
+            "line": "Alright. Get ready.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_9_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_8_alex.wav"
+            ],
+            "sha256": "65f4293a136add27bf13c3659f6a2ddea31711c906fd5423500771d0d9f836d5"
+          },
+          {
+            "asset": "voices/reaction_started_0_alex.wav",
+            "line": "3\u2026 2\u2026 1\u2026 Go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_9_alex.wav"
+            ],
+            "sha256": "b18be92f858f46b585e7a50e5301041a82d43306523cbc8da00984ff38e6fac8"
+          }
+        ],
+        "TINY": [
+          {
+            "asset": "voices/reaction_tiny_0_alex.wav",
+            "line": "Hmm\u2026 Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_2_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_7_alex.wav"
+            ],
+            "sha256": "01e3fbb7e49763da4e9814d1b322237bacecfffe395f997be36ea4438bf027d5"
+          },
+          {
+            "asset": "voices/reaction_tiny_1_alex.wav",
+            "line": "Huh? On it.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_3_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_10_alex.wav"
+            ],
+            "sha256": "0d315a728184cc250d5cac6d1defcb33dd5e760bc4c71265364dd6fbac7d2efd"
+          }
+        ],
+        "PLAN_DAY": [
+          {
+            "asset": "voices/reaction_tiny_0_alex.wav",
+            "line": "Hmm\u2026 Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_2_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_7_alex.wav"
+            ],
+            "sha256": "01e3fbb7e49763da4e9814d1b322237bacecfffe395f997be36ea4438bf027d5"
+          },
+          {
+            "asset": "voices/reaction_created_0_alex.wav",
+            "line": "Alright. Get ready.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_9_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_8_alex.wav"
+            ],
+            "sha256": "65f4293a136add27bf13c3659f6a2ddea31711c906fd5423500771d0d9f836d5"
+          },
+          {
+            "asset": "voices/reaction_started_0_alex.wav",
+            "line": "3\u2026 2\u2026 1\u2026 Go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_9_alex.wav"
+            ],
+            "sha256": "b18be92f858f46b585e7a50e5301041a82d43306523cbc8da00984ff38e6fac8"
+          },
+          {
+            "asset": "voices/reaction_snooze_0_alex.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_17_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Alex Brodie/refusal_2_alex.wav"
+            ],
+            "sha256": "532a23771adc4dc90945cd4afd8016bc9a270668c2513240a65dcdcdd4db84f8"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_alex.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Alex Brodie/refusal_9_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_7_alex.wav"
+            ],
+            "sha256": "3be300fcc755b8ace4f10b958de25627ec3932d132bf274dd065b1c58ad7269b"
+          }
+        ],
+        "NOTIFICATION_CLEARED": [
+          {
+            "asset": "voices/reaction_snooze_0_alex.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_17_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Alex Brodie/refusal_2_alex.wav"
+            ],
+            "sha256": "532a23771adc4dc90945cd4afd8016bc9a270668c2513240a65dcdcdd4db84f8"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_alex.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Alex Brodie/refusal_9_alex.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Alex Brodie/confirmation_7_alex.wav"
+            ],
+            "sha256": "3be300fcc755b8ace4f10b958de25627ec3932d132bf274dd065b1c58ad7269b"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sean",
+      "name": "Sean Lenhart",
+      "description": "Edited human reactions",
+      "categories": {
+        "CREATED": [
+          {
+            "asset": "voices/reaction_created_0_sean.wav",
+            "line": "Alright. Get ready.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_9_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_8_sean.wav"
+            ],
+            "sha256": "aa3008a1af5ac8ec583cc2e881f3c3b0e7c3bf5b7d9cf082e7a4207ebe658119"
+          },
+          {
+            "asset": "voices/reaction_created_1_sean.wav",
+            "line": "You got it. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_4_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_7_sean.wav"
+            ],
+            "sha256": "a4d0a763e53433bb22a753d77ead939bd8b9709a44265e4962d96c8e9b107265"
+          }
+        ],
+        "STARTED": [
+          {
+            "asset": "voices/reaction_started_0_sean.wav",
+            "line": "3\u2026 2\u2026 1\u2026 Go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_9_sean.wav"
+            ],
+            "sha256": "2f6684ba291dcde8589973989d769279b6c69fdbf5b43b351b3bdf5ec81a0c36"
+          },
+          {
+            "asset": "voices/reaction_started_1_sean.wav",
+            "line": "Let\u2019s go! Good luck.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_7_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/4 - Farewell/Male/Sean Lenhart/farewell_9_sean.wav"
+            ],
+            "sha256": "849733e6dafc0dc0c7bb7769cb217ed89fff2564296b884eed8c464c314f97a5"
+          }
+        ],
+        "COMPLETED": [
+          {
+            "asset": "voices/reaction_completed_0_sean.wav",
+            "line": "Objective complete. Wow!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/1 - Completion/Male/Sean Lenhart/completion_8_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_10_sean.wav"
+            ],
+            "sha256": "b9c8ebe3062341df8805320ca952437aa7b5abf20b42d4fe1ca66a639168cdb1"
+          },
+          {
+            "asset": "voices/reaction_completed_1_sean.wav",
+            "line": "All done. [Laughter]",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/1 - Completion/Male/Sean Lenhart/completion_1_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_12_sean.wav"
+            ],
+            "sha256": "6ce151fe38f3cc3caef7521392df070f38240e1665f384dd57528347a29eea76"
+          }
+        ],
+        "SNOOZE": [
+          {
+            "asset": "voices/reaction_snooze_0_sean.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_17_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Sean Lenhart/refusal_2_sean.wav"
+            ],
+            "sha256": "bb3bf20e122ceaa9f29d35af102fc81cbbe9ee7c6924f3d5e1c7b6ebd07fca74"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_sean.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Sean Lenhart/refusal_9_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_7_sean.wav"
+            ],
+            "sha256": "0f588b4008af1eadc23cc9f2e42d1ace69c039d6a418680702d19807beab004e"
+          }
+        ],
+        "OVERDUE": [
+          {
+            "asset": "voices/reaction_overdue_0_sean.wav",
+            "line": "Hey! Get ready. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/3 - Greeting/Male/Sean Lenhart/greeting_3_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_8_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_7_sean.wav"
+            ],
+            "sha256": "eaab57aa5c60ff1ba090f44614f2f5fdac497d4d1b4d8b791b093a841fe62e60"
+          },
+          {
+            "asset": "voices/reaction_overdue_1_sean.wav",
+            "line": "[Clears throat] On it.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_13_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_10_sean.wav"
+            ],
+            "sha256": "07fd7d35fc2232833a3cadbcb089e44d8e40c33d72971a6c95e51cf4cbe8fbb5"
+          }
+        ],
+        "ABANDON": [
+          {
+            "asset": "voices/reaction_snooze_0_sean.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_17_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Sean Lenhart/refusal_2_sean.wav"
+            ],
+            "sha256": "bb3bf20e122ceaa9f29d35af102fc81cbbe9ee7c6924f3d5e1c7b6ebd07fca74"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_sean.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Sean Lenhart/refusal_9_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_7_sean.wav"
+            ],
+            "sha256": "0f588b4008af1eadc23cc9f2e42d1ace69c039d6a418680702d19807beab004e"
+          },
+          {
+            "asset": "voices/reaction_tiny_0_sean.wav",
+            "line": "Hmm\u2026 Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_2_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_7_sean.wav"
+            ],
+            "sha256": "00d4696da39c270ccbccfafd1ca2c983f7ce19664d239b651d5485fea0cf9328"
+          },
+          {
+            "asset": "voices/reaction_created_0_sean.wav",
+            "line": "Alright. Get ready.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_9_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_8_sean.wav"
+            ],
+            "sha256": "aa3008a1af5ac8ec583cc2e881f3c3b0e7c3bf5b7d9cf082e7a4207ebe658119"
+          },
+          {
+            "asset": "voices/reaction_started_0_sean.wav",
+            "line": "3\u2026 2\u2026 1\u2026 Go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_9_sean.wav"
+            ],
+            "sha256": "2f6684ba291dcde8589973989d769279b6c69fdbf5b43b351b3bdf5ec81a0c36"
+          }
+        ],
+        "IDLE": [
+          {
+            "asset": "voices/reaction_tiny_0_sean.wav",
+            "line": "Hmm\u2026 Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_2_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_7_sean.wav"
+            ],
+            "sha256": "00d4696da39c270ccbccfafd1ca2c983f7ce19664d239b651d5485fea0cf9328"
+          },
+          {
+            "asset": "voices/reaction_snooze_0_sean.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_17_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Sean Lenhart/refusal_2_sean.wav"
+            ],
+            "sha256": "bb3bf20e122ceaa9f29d35af102fc81cbbe9ee7c6924f3d5e1c7b6ebd07fca74"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_sean.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Sean Lenhart/refusal_9_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_7_sean.wav"
+            ],
+            "sha256": "0f588b4008af1eadc23cc9f2e42d1ace69c039d6a418680702d19807beab004e"
+          },
+          {
+            "asset": "voices/reaction_created_0_sean.wav",
+            "line": "Alright. Get ready.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_9_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_8_sean.wav"
+            ],
+            "sha256": "aa3008a1af5ac8ec583cc2e881f3c3b0e7c3bf5b7d9cf082e7a4207ebe658119"
+          },
+          {
+            "asset": "voices/reaction_started_0_sean.wav",
+            "line": "3\u2026 2\u2026 1\u2026 Go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_9_sean.wav"
+            ],
+            "sha256": "2f6684ba291dcde8589973989d769279b6c69fdbf5b43b351b3bdf5ec81a0c36"
+          }
+        ],
+        "TINY": [
+          {
+            "asset": "voices/reaction_tiny_0_sean.wav",
+            "line": "Hmm\u2026 Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_2_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_7_sean.wav"
+            ],
+            "sha256": "00d4696da39c270ccbccfafd1ca2c983f7ce19664d239b651d5485fea0cf9328"
+          },
+          {
+            "asset": "voices/reaction_tiny_1_sean.wav",
+            "line": "Huh? On it.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_3_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_10_sean.wav"
+            ],
+            "sha256": "86bee9c853116717a6a9eb0fae69630ea96b6694acc91471685a0c9dfb3dfb8f"
+          }
+        ],
+        "PLAN_DAY": [
+          {
+            "asset": "voices/reaction_tiny_0_sean.wav",
+            "line": "Hmm\u2026 Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_2_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_7_sean.wav"
+            ],
+            "sha256": "00d4696da39c270ccbccfafd1ca2c983f7ce19664d239b651d5485fea0cf9328"
+          },
+          {
+            "asset": "voices/reaction_created_0_sean.wav",
+            "line": "Alright. Get ready.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_9_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_8_sean.wav"
+            ],
+            "sha256": "aa3008a1af5ac8ec583cc2e881f3c3b0e7c3bf5b7d9cf082e7a4207ebe658119"
+          },
+          {
+            "asset": "voices/reaction_started_0_sean.wav",
+            "line": "3\u2026 2\u2026 1\u2026 Go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_9_sean.wav"
+            ],
+            "sha256": "2f6684ba291dcde8589973989d769279b6c69fdbf5b43b351b3bdf5ec81a0c36"
+          },
+          {
+            "asset": "voices/reaction_snooze_0_sean.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_17_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Sean Lenhart/refusal_2_sean.wav"
+            ],
+            "sha256": "bb3bf20e122ceaa9f29d35af102fc81cbbe9ee7c6924f3d5e1c7b6ebd07fca74"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_sean.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Sean Lenhart/refusal_9_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_7_sean.wav"
+            ],
+            "sha256": "0f588b4008af1eadc23cc9f2e42d1ace69c039d6a418680702d19807beab004e"
+          }
+        ],
+        "NOTIFICATION_CLEARED": [
+          {
+            "asset": "voices/reaction_snooze_0_sean.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_17_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Sean Lenhart/refusal_2_sean.wav"
+            ],
+            "sha256": "bb3bf20e122ceaa9f29d35af102fc81cbbe9ee7c6924f3d5e1c7b6ebd07fca74"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_sean.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Male/Sean Lenhart/refusal_9_sean.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Male/Sean Lenhart/confirmation_7_sean.wav"
+            ],
+            "sha256": "0f588b4008af1eadc23cc9f2e42d1ace69c039d6a418680702d19807beab004e"
+          }
+        ]
+      }
+    },
+    {
+      "id": "meghan",
+      "name": "Meghan Christian",
+      "description": "Edited human reactions",
+      "categories": {
+        "CREATED": [
+          {
+            "asset": "voices/reaction_created_0_meghan.wav",
+            "line": "Alright. Get ready.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_9_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_8_meghan.wav"
+            ],
+            "sha256": "9664b5d2a5f4ae218743e002388536fe2de8275f377377b7cd2e602013affe46"
+          },
+          {
+            "asset": "voices/reaction_created_1_meghan.wav",
+            "line": "You got it. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_4_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_7_meghan.wav"
+            ],
+            "sha256": "2fc437734a3f030946b799a4f96a59829a62727017d666ef7f64650f80aa9715"
+          }
+        ],
+        "STARTED": [
+          {
+            "asset": "voices/reaction_started_0_meghan.wav",
+            "line": "3\u2026 2\u2026 1\u2026 Go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_9_meghan.wav"
+            ],
+            "sha256": "39ef38dfdca5e51c4a66bc2112c0ff1d6afa2ee3cdd951c74311631892cce89e"
+          },
+          {
+            "asset": "voices/reaction_started_1_meghan.wav",
+            "line": "Let\u2019s go! Good luck.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_7_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/4 - Farewell/Female/Meghan Christian/farewell_9_meghan.wav"
+            ],
+            "sha256": "40d40e9cc2c857367c80965209148096062a16ad5577ba9aed1d46a32a1e0f6f"
+          }
+        ],
+        "COMPLETED": [
+          {
+            "asset": "voices/reaction_completed_0_meghan.wav",
+            "line": "Objective complete. Wow!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/1 - Completion/Female/Meghan Christian/completion_8_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_10_meghan.wav"
+            ],
+            "sha256": "c334e2f7a23f824eeb19fe2dcd6c2da909e4bd4632877907f934bc0d3a448fcb"
+          },
+          {
+            "asset": "voices/reaction_completed_1_meghan.wav",
+            "line": "All done. [Laughter]",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/1 - Completion/Female/Meghan Christian/completion_1_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_12_meghan.wav"
+            ],
+            "sha256": "ba9d56fb08277308e59195b8e6e81a6b7980d45e3e0e2c1ad29e2e490e2abc1d"
+          }
+        ],
+        "SNOOZE": [
+          {
+            "asset": "voices/reaction_snooze_0_meghan.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_17_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Female/Meghan Christian/refusal_2_meghan.wav"
+            ],
+            "sha256": "372b4a2951a292428bf391569fd15d5a776be8730e414318dfe8bcc3dd348a81"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_meghan.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Female/Meghan Christian/refusal_9_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_7_meghan.wav"
+            ],
+            "sha256": "5e1e996e4aed5e66df01cce158c60425c5f07f6e1c6bf0cb0a83feb8d086ab1d"
+          }
+        ],
+        "OVERDUE": [
+          {
+            "asset": "voices/reaction_overdue_0_meghan.wav",
+            "line": "Hey! Get ready. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/3 - Greeting/Female/Meghan Christian/greeting_3_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_8_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_7_meghan.wav"
+            ],
+            "sha256": "fe5118037998c2f3a7708126a7937d1d86e7e5c07964a189e830197d61abd22c"
+          },
+          {
+            "asset": "voices/reaction_overdue_1_meghan.wav",
+            "line": "[Clears throat] On it.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_13_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_10_meghan.wav"
+            ],
+            "sha256": "d2708a26020dfd1e26c54a71eb2a927ce354db5e85cdc0da9d1893c3bcc2e4e2"
+          }
+        ],
+        "ABANDON": [
+          {
+            "asset": "voices/reaction_snooze_0_meghan.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_17_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Female/Meghan Christian/refusal_2_meghan.wav"
+            ],
+            "sha256": "372b4a2951a292428bf391569fd15d5a776be8730e414318dfe8bcc3dd348a81"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_meghan.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Female/Meghan Christian/refusal_9_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_7_meghan.wav"
+            ],
+            "sha256": "5e1e996e4aed5e66df01cce158c60425c5f07f6e1c6bf0cb0a83feb8d086ab1d"
+          },
+          {
+            "asset": "voices/reaction_tiny_0_meghan.wav",
+            "line": "Hmm\u2026 Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_2_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_7_meghan.wav"
+            ],
+            "sha256": "45f778469fc3c07b78fcb6e21759712cdef1f6e372432040c83bab31226b4565"
+          },
+          {
+            "asset": "voices/reaction_created_0_meghan.wav",
+            "line": "Alright. Get ready.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_9_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_8_meghan.wav"
+            ],
+            "sha256": "9664b5d2a5f4ae218743e002388536fe2de8275f377377b7cd2e602013affe46"
+          },
+          {
+            "asset": "voices/reaction_started_0_meghan.wav",
+            "line": "3\u2026 2\u2026 1\u2026 Go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_9_meghan.wav"
+            ],
+            "sha256": "39ef38dfdca5e51c4a66bc2112c0ff1d6afa2ee3cdd951c74311631892cce89e"
+          }
+        ],
+        "IDLE": [
+          {
+            "asset": "voices/reaction_tiny_0_meghan.wav",
+            "line": "Hmm\u2026 Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_2_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_7_meghan.wav"
+            ],
+            "sha256": "45f778469fc3c07b78fcb6e21759712cdef1f6e372432040c83bab31226b4565"
+          },
+          {
+            "asset": "voices/reaction_snooze_0_meghan.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_17_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Female/Meghan Christian/refusal_2_meghan.wav"
+            ],
+            "sha256": "372b4a2951a292428bf391569fd15d5a776be8730e414318dfe8bcc3dd348a81"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_meghan.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Female/Meghan Christian/refusal_9_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_7_meghan.wav"
+            ],
+            "sha256": "5e1e996e4aed5e66df01cce158c60425c5f07f6e1c6bf0cb0a83feb8d086ab1d"
+          },
+          {
+            "asset": "voices/reaction_created_0_meghan.wav",
+            "line": "Alright. Get ready.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_9_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_8_meghan.wav"
+            ],
+            "sha256": "9664b5d2a5f4ae218743e002388536fe2de8275f377377b7cd2e602013affe46"
+          },
+          {
+            "asset": "voices/reaction_started_0_meghan.wav",
+            "line": "3\u2026 2\u2026 1\u2026 Go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_9_meghan.wav"
+            ],
+            "sha256": "39ef38dfdca5e51c4a66bc2112c0ff1d6afa2ee3cdd951c74311631892cce89e"
+          }
+        ],
+        "TINY": [
+          {
+            "asset": "voices/reaction_tiny_0_meghan.wav",
+            "line": "Hmm\u2026 Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_2_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_7_meghan.wav"
+            ],
+            "sha256": "45f778469fc3c07b78fcb6e21759712cdef1f6e372432040c83bab31226b4565"
+          },
+          {
+            "asset": "voices/reaction_tiny_1_meghan.wav",
+            "line": "Huh? On it.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_3_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_10_meghan.wav"
+            ],
+            "sha256": "239278053140c59880d87d397d4174a546ca9c601dca803bcd22ab29a6d9ff04"
+          }
+        ],
+        "PLAN_DAY": [
+          {
+            "asset": "voices/reaction_tiny_0_meghan.wav",
+            "line": "Hmm\u2026 Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_2_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_7_meghan.wav"
+            ],
+            "sha256": "45f778469fc3c07b78fcb6e21759712cdef1f6e372432040c83bab31226b4565"
+          },
+          {
+            "asset": "voices/reaction_created_0_meghan.wav",
+            "line": "Alright. Get ready.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_9_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_8_meghan.wav"
+            ],
+            "sha256": "9664b5d2a5f4ae218743e002388536fe2de8275f377377b7cd2e602013affe46"
+          },
+          {
+            "asset": "voices/reaction_started_0_meghan.wav",
+            "line": "3\u2026 2\u2026 1\u2026 Go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_9_meghan.wav"
+            ],
+            "sha256": "39ef38dfdca5e51c4a66bc2112c0ff1d6afa2ee3cdd951c74311631892cce89e"
+          },
+          {
+            "asset": "voices/reaction_snooze_0_meghan.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_17_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Female/Meghan Christian/refusal_2_meghan.wav"
+            ],
+            "sha256": "372b4a2951a292428bf391569fd15d5a776be8730e414318dfe8bcc3dd348a81"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_meghan.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Female/Meghan Christian/refusal_9_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_7_meghan.wav"
+            ],
+            "sha256": "5e1e996e4aed5e66df01cce158c60425c5f07f6e1c6bf0cb0a83feb8d086ab1d"
+          }
+        ],
+        "NOTIFICATION_CLEARED": [
+          {
+            "asset": "voices/reaction_snooze_0_meghan.wav",
+            "line": "[Sigh] No way.",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_17_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Female/Meghan Christian/refusal_2_meghan.wav"
+            ],
+            "sha256": "372b4a2951a292428bf391569fd15d5a776be8730e414318dfe8bcc3dd348a81"
+          },
+          {
+            "asset": "voices/reaction_snooze_1_meghan.wav",
+            "line": "Not happening. Let\u2019s go!",
+            "originals": [
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/5 - Refusal/Female/Meghan Christian/refusal_9_meghan.wav",
+              "Super Dialogue Audio Pack v1/Step 2 - Audio Files/2 - Confirmation/Female/Meghan Christian/confirmation_7_meghan.wav"
+            ],
+            "sha256": "5e1e996e4aed5e66df01cce158c60425c5f07f6e1c6bf0cb0a83feb8d086ab1d"
+          }
+        ]
+      }
+    }
+  ]
+}

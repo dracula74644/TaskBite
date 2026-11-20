@@ -1,0 +1,77 @@
+Bite Sweet
+Scripts only; awaiting real human recordings.
+Affectionate, conversational teasing for your partner. Smile gently, use your natural voice, and sound encouraging. No imitation, music, or sound effects.
+
+Four human performances per situation. Record each file separately.
+
+PLAN_DAY
+PLAN_DAY/01.wav  Babe, even your to-do list is playing hard to get.
+PLAN_DAY/02.wav  One little task, sweetheart. Let me cheer you on.
+PLAN_DAY/03.wav  One small plan, babe. Let us make today yours.
+PLAN_DAY/04.wav  Empty list, love? Give me one thing to celebrate.
+
+CREATED
+CREATED/01.wav  Look at you making plans, cutie. I'm taking notes.
+CREATED/02.wav  Added, babe. Now comes the adorable part: doing it.
+CREATED/03.wav  Another little plan, love. I am cheering already.
+CREATED/04.wav  Added, sweetheart. We make a pretty good team.
+
+STARTED
+STARTED/01.wav  There you go, babe. That's my favorite plot twist.
+STARTED/02.wav  Look at you go, cutie. I'm cheering already.
+STARTED/03.wav  Look at you go, love. Extremely attractive productivity.
+STARTED/04.wav  You started, babe. I knew you had this.
+
+COMPLETED
+COMPLETED/01.wav  You did it, babe. Proud of you, obviously.
+COMPLETED/02.wav  Task finished. Cute and capable? Show-off.
+COMPLETED/03.wav  Done already, love? Leave some brilliance for tomorrow.
+COMPLETED/04.wav  That is my favorite overachiever. Nicely done, sweetheart.
+
+COMPLETED_LATE
+COMPLETED_LATE/01.wav  Fashionably late, babe. Still proud you finished.
+COMPLETED_LATE/02.wav  Late entrance, lovely finish. Very you, sweetheart.
+COMPLETED_LATE/03.wav  You finished, babe. I saved your imaginary victory hug.
+COMPLETED_LATE/04.wav  A little late, love. Still very proud of you.
+
+OVERDUE
+OVERDUE/01.wav  Babe, that deadline wasn't playing hard to get.
+OVERDUE/02.wav  Sweetheart, your task is waiting for its big moment.
+OVERDUE/03.wav  Babe, your deadline is doing the dramatic sigh now.
+OVERDUE/04.wav  Your task misses you, love. I understand the feeling.
+
+SNOOZE
+SNOOZE/01.wav  Later again, babe? Your task is practicing its pout.
+SNOOZE/02.wav  Sweetheart, that task has had enough beauty sleep.
+SNOOZE/03.wav  Later, sweetheart? Your task is getting adorably clingy.
+SNOOZE/04.wav  Rescheduled, love. Your future self expects a little effort.
+
+SNOOZE_REPEAT
+SNOOZE_REPEAT/01.wav  Babe, this task has more rain checks than our dates.
+SNOOZE_REPEAT/02.wav  Another tomorrow? Sweetheart, even procrastination needs a day off.
+SNOOZE_REPEAT/03.wav  Babe, this task has more comebacks than our jokes.
+SNOOZE_REPEAT/04.wav  Again, sweetheart? That checkbox is developing trust issues.
+
+ABANDON
+ABANDON/01.wav  Back already, cutie? Your little missions saved your seat.
+ABANDON/02.wav  Babe, browsing the list doesn't count as a date.
+ABANDON/03.wav  Back again, love? Your task saved the best seat.
+ABANDON/04.wav  Missed you, sweetheart. The list was terrible company.
+
+IDLE
+IDLE/01.wav  Babe, your little missions could use a little attention.
+IDLE/02.wav  Sweetheart, one small win would look good on you.
+IDLE/03.wav  Thinking looks cute, babe. One small step looks cuter.
+IDLE/04.wav  Still there, love? Your task wants a little attention.
+
+TINY
+TINY/01.wav  Babe, this takes less time than picking a selfie.
+TINY/02.wav  Tiny task, sweetheart. You're giving it main-character drama.
+TINY/03.wav  Tiny task, sweetheart. You can beat my dramatic sigh.
+TINY/04.wav  Five minutes, babe. Then you can resume being adorable.
+
+NOTIFICATION_CLEARED
+NOTIFICATION_CLEARED/01.wav  Babe, smooth swipe. One little task next?
+NOTIFICATION_CLEARED/02.wav  Cute dodge, sweetheart. Your plans are still waiting.
+NOTIFICATION_CLEARED/03.wav  Nice swipe, babe. The task still wants your number.
+NOTIFICATION_CLEARED/04.wav  Message dismissed, sweetheart. Your little mission is still waiting.

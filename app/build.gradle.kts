@@ -18,9 +18,15 @@ android {
         applicationId = "com.dracula.taskbite"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 20
+        versionName = "1.19"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders["appLabel"] = "TaskBite"
     }
+    // Optional recordings for this personal APK, separate from the publicly redistributable pack.
+    if ((findProperty("includePersonalVoices") as String?)?.toBoolean() != false)
+        sourceSets["main"].assets.srcDir("src/personal/assets")
+    sourceSets["androidTest"].assets.srcDir("$projectDir/schemas")
     signingConfigs {
         if (releaseKeys.isNotEmpty()) create("release") {
             storeFile = rootProject.file(releaseKeys.getProperty("storeFile"))
@@ -30,6 +36,12 @@ android {
         }
     }
     buildTypes {
+        debug {
+            if ((findProperty("deviceChecks") as String?)?.toBoolean() == true) {
+                applicationIdSuffix = ".devcheck"
+                manifestPlaceholders["appLabel"] = "Bite Test Lab"
+            }
+        }
         release {
             isMinifyEnabled = false
             if (releaseKeys.isNotEmpty()) signingConfig = signingConfigs.getByName("release")
@@ -57,10 +69,17 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     implementation("androidx.work:work-runtime-ktx:2.10.0")
+    implementation("androidx.glance:glance-appwidget:1.1.1")
     ksp(libs.androidx.room.compiler)
     debugImplementation(libs.androidx.ui.tooling)
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.robolectric:robolectric:4.14.1")
+    testImplementation("androidx.work:work-testing:2.10.0")
     testImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test:runner:1.6.2")
+    androidTestImplementation("androidx.test:rules:1.6.1")
 }

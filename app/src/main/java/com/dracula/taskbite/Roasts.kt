@@ -1,9 +1,25 @@
 package com.dracula.taskbite
 
-enum class RoastKind { OVERDUE, SNOOZE, ABANDON, IDLE, TINY, CREATED, COMPLETED, STARTED }
+enum class RoastKind { OVERDUE, SNOOZE, ABANDON, IDLE, TINY, CREATED, COMPLETED, STARTED, SNOOZE_REPEAT, COMPLETED_LATE, PLAN_DAY, NOTIFICATION_CLEARED }
+
+enum class TeasingStyle(val label: String) { CLASSIC("Classic"), SWEET("Sweet teasing") }
 
 object Roasts {
     val lines = mapOf(
+        RoastKind.NOTIFICATION_CLEARED to listOf(
+            "Nice swipe. Your plans didn't move.",
+            "Notification gone. Procrastination remains undefeated.",
+            "That swipe counted as cardio, apparently.",
+            "You cleared a reminder. Ambitious little detour.",
+            "Smooth swipe. Shall we try a checkbox next?",
+        ),
+        RoastKind.PLAN_DAY to listOf(
+            "No tasks? Bold of you to call that a plan.",
+            "Your list is empty. Your potential is getting bored.",
+            "One tiny task. Give this day a plot.",
+            "Blank list, big dreams. Shall we introduce them?",
+            "Your first task called. It would like to exist.",
+        ),
         RoastKind.OVERDUE to listOf(
             "Your deadline called. I told it you were buffering.",
             "That task is aging like milk. Fancy a sniff?",
@@ -26,11 +42,11 @@ object Roasts {
             "Leaving already? We haven't even disappointed the progress bar.",
         ),
         RoastKind.IDLE to listOf(
-            "Five minutes. Are we waiting for a dramatic soundtrack?",
-            "Staring contest update: the task is winning.",
-            "I've seen loading screens with more initiative.",
-            "Should I yell action? ACTION! Anything?",
-            "Your thumb's on sabbatical. Should we send postcards?",
+            "Your tasks are waiting. Even their patience needs a break.",
+            "A little progress would really confuse this to-do list.",
+            "Your list called. It misses those checkmarks.",
+            "Plot twist available: finish one small thing.",
+            "These tasks won't complete their own character arcs.",
         ),
         RoastKind.TINY to listOf(
             "You've spent longer avoiding it than it actually takes.",
@@ -56,12 +72,60 @@ object Roasts {
             "Main character energy. Finally, some plot development.",
             "Go get it. I'll supervise dramatically.",
         ),
+        RoastKind.SNOOZE_REPEAT to listOf(
+            "Tomorrow again? This task practically lives there now.",
+            "Another postponement. Should we start charging this task rent?",
+            "Your future self has officially muted this conversation.",
+            "This deadline has traveled more than we have.",
+            "Rescheduled again. Even the snooze button needs a break.",
+        ),
+        RoastKind.COMPLETED_LATE to listOf(
+            "Late, but done. I'll retire the missing-task poster.",
+            "The overdue legend is complete. Historians can finally rest.",
+            "You finished it! That deadline can stop haunting us.",
+        ),
     )
-    private val previous = mutableMapOf<RoastKind, String>()
-    @Synchronized fun pick(kind: RoastKind): String {
-        val options = lines.getValue(kind)
-        return options.filter { it != previous[kind] }.random().also { previous[kind] = it }
+    val sweetLines = mapOf(
+        RoastKind.NOTIFICATION_CLEARED to listOf(
+            "Babe, smooth swipe. One little task next?",
+            "Cute dodge, sweetheart. Your plans are still waiting.",
+            "You can swipe me away, cutie. I'm still cheering.",
+            "Babe, that notification wasn't the task.",
+            "Nice swipe, love. A tiny win would look cuter.",
+        ),
+        RoastKind.PLAN_DAY to listOf("Babe, even your to-do list is playing hard to get.", "One little task, sweetheart. Let me cheer you on.", "Cute face. Empty list. Let's give today a plan."),
+        RoastKind.CREATED to listOf("Look at you making plans, cutie. I'm taking notes.", "Added, babe. Now comes the adorable part: doing it.", "Big plans, sweetheart. Let's start with one little win."),
+        RoastKind.STARTED to listOf("There you go, babe. That's my favorite plot twist.", "Look at you go, cutie. I'm cheering already.", "Starting looks good on you, sweetheart."),
+        RoastKind.COMPLETED to listOf("You did it, babe. Proud of you, obviously.", "Task finished. Cute and capable? Show-off.", "Look at that, sweetheart. A little victory for you."),
+        RoastKind.COMPLETED_LATE to listOf("Fashionably late, babe. Still proud you finished.", "Late entrance, lovely finish. Very you, sweetheart.", "Done at last, cutie. I'll retire the dramatic sigh."),
+        RoastKind.OVERDUE to listOf("Babe, that deadline wasn't playing hard to get.", "Sweetheart, your task is waiting for its big moment.", "Cute distraction. That deadline still noticed, babe."),
+        RoastKind.SNOOZE to listOf("Tomorrow again, babe? Your calendar is blushing.", "Sweetheart, that task has had enough beauty sleep.", "Postponed, cutie. Shall we give tomorrow a fighting chance?"),
+        RoastKind.SNOOZE_REPEAT to listOf("Babe, this task has more rain checks than our dates.", "Another tomorrow? Sweetheart, even procrastination needs a day off.", "Cutie, this task is practically renting tomorrow."),
+        RoastKind.ABANDON to listOf("Back already, cutie? Your little missions saved your seat.", "Babe, browsing the list doesn't count as a date.", "Welcome back, sweetheart. One little win together?"),
+        RoastKind.IDLE to listOf("Babe, your little missions could use a little attention.", "Sweetheart, one small win would look good on you.", "Your tasks miss you, cutie. Give one a moment."),
+        RoastKind.TINY to listOf("Babe, this takes less time than picking a selfie.", "Tiny task, sweetheart. You're giving it main-character drama.", "Two minutes, cutie. Then you can resume being mysterious."),
+    )
+    fun options(kind: RoastKind, style: TeasingStyle = TeasingStyle.CLASSIC): List<String> =
+        (if (style == TeasingStyle.SWEET) sweetLines else lines).getValue(kind)
+    private val previous = mutableMapOf<Pair<RoastKind, TeasingStyle>, String>()
+    @Synchronized fun pick(kind: RoastKind, style: TeasingStyle = TeasingStyle.CLASSIC): String {
+        val key = kind to style
+        val options = options(kind, style)
+        return options.filter { it != previous[key] }.random().also { previous[key] = it }
     }
+    fun forAction(kind: RoastKind, task: Task, now: Long = System.currentTimeMillis()): RoastKind = when {
+        kind == RoastKind.SNOOZE && task.snoozeCount >= 2 -> RoastKind.SNOOZE_REPEAT
+        kind == RoastKind.COMPLETED && task.dueAt < now -> RoastKind.COMPLETED_LATE
+        else -> kind
+    }
+}
+
+fun RoastKind.baseKind(): RoastKind = when (this) {
+    RoastKind.SNOOZE_REPEAT -> RoastKind.SNOOZE
+    RoastKind.COMPLETED_LATE -> RoastKind.COMPLETED
+    RoastKind.PLAN_DAY -> RoastKind.ABANDON
+    RoastKind.NOTIFICATION_CLEARED -> RoastKind.ABANDON
+    else -> this
 }
 
 object ReminderPolicy {
@@ -75,4 +139,17 @@ object ReminderPolicy {
     fun eligible(task: Task, now: Long): Boolean = !task.archived && task.completedAt == null &&
         task.dueAt <= now && task.remindAfter <= now
     fun kind(task: Task): RoastKind = if (task.minutes < 5) RoastKind.TINY else RoastKind.OVERDUE
+}
+
+object InAppReactionPolicy {
+    const val IDLE_DELAY = 5 * 60 * 1000L
+    const val NUDGE_COOLDOWN = 5 * 60 * 1000L
+    fun canNudge(now: Long, lastReaction: Long): Boolean = now - lastReaction >= NUDGE_COOLDOWN
+    fun idleKind(tasks: List<Task>, now: Long, zone: java.time.ZoneId = java.time.ZoneId.systemDefault()): RoastKind? {
+        val endToday = java.time.Instant.ofEpochMilli(now).atZone(zone)
+            .toLocalDate().plusDays(1).atStartOfDay(zone).toInstant().toEpochMilli()
+        val pending = tasks.filter { !it.archived && it.completedAt == null && it.dueAt < endToday }
+        if (pending.isEmpty()) return null
+        return if (pending.any { it.minutes < 5 }) RoastKind.TINY else RoastKind.IDLE
+    }
 }

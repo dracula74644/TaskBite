@@ -1,0 +1,57 @@
+BITE ORIGINALS — THREE-LINE HUMAN VOICE AUDITION
+
+Recommended approach
+Use one human performer for the whole pack. First try these three lines
+with a friend or your own voice. Choose a delivery you enjoy hearing
+repeatedly, then record the full 24-line script. A voice actor is an option
+if those samples do not have the personality you want.
+
+Character
+An amused sidekick who wants you to succeed and notices your excuses.
+Conversational, dry, and warm. Let the joke land with a short pause.
+Encouragement should sound pleased; teasing should sound playful.
+Use your natural voice and an original character, without imitating a
+specific game performer. No shouting, humiliation, or threatening delivery.
+
+Record two takes of each sample: one understated, one more animated.
+Keep the words unchanged so we can compare the performances.
+
+1. A task was added — CREATED/01.wav
+   "Another side quest. Your collection is getting suspicious."
+   Direction: curious approval, then a small smile on "suspicious."
+
+2. A task was completed — COMPLETED/01.wav
+   "You finished! I had a whole roast prepared."
+   Direction: pleased surprise, followed by mock disappointment.
+
+3. A deadline was missed — OVERDUE/01.wav
+   "Your deadline called. I said you were buffering."
+   Direction: dry and conspiratorial, as if covering for a friend.
+
+Recording
+A quiet room and phone microphone are enough for the first audition.
+Keep the microphone distance consistent. Leave a little silence before
+and after each line. Avoid music, reverb effects, and clipped/distorted
+speech. Aim for about 2–5 seconds per line at a natural pace.
+Keep the original recordings. Use PCM WAV when the recorder supports it;
+do not rename a compressed file to .wav.
+
+Try it in the app
+Sidekick > Voice settings: select the matching situation, record or import
+the take, then preview it at your usual listening volume. Enable "Use my
+recordings" to hear it on the corresponding action. Unrecorded situations
+continue using the selected existing human pack.
+
+Selection
+Listen on the phone speaker, including a few repeated plays. Pick the take
+with clear words, natural timing, and humor that remains pleasant after
+the novelty wears off. If both deliveries feel tiring, soften the delivery
+before recording the remaining lines.
+
+Full pack
+Use recording-script.txt for all 24 lines across 12 situations. Save the
+chosen take under each listed filename. The packaging tool needs all 24
+WAV files and a performer name; it normalizes recordings and creates the
+optional Bite Originals pack. It does not create a human performance.
+
+Status: audition instructions and scripts only; new audio is still needed.

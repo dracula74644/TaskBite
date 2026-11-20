@@ -8,3 +8,8 @@ signing.properties
 *.keystore
 *.apk
 *.iml
+__pycache__/
+*.pyc
+
+# Optional personal voice recordings; do not publish with the source repository.
+app/src/personal/

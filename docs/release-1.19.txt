@@ -1,0 +1,15 @@
+Bite 1.19 makes everyday tasks and reminders easier to manage.
+
+- Search tasks, checklist steps, and history.
+- Break tasks into small checklists. Recurring tasks start with fresh unchecked steps.
+- Choose Later today, with Undo, alongside Tomorrow.
+- See reminder status and quick fixes in Sidekick.
+- Pause teasing for one hour or until tomorrow, with an independent choice to keep deadline reminders.
+- Back up tasks, history, settings, custom recordings, and locally saved personal voice packs together. Existing JSON task backups still restore.
+- Follow a guided recording session with 96 short original prompts: four lines for each of 12 situations in Classic and Sweet. These are scripts; new human performances must still be recorded or imported.
+- Preserve previously installed personal packs on the phone across later public updates.
+- Add compact-screen and large-text checks, plus a separate Bite Test Lab for phone tests.
+
+This public APK contains the credited CC BY human voices and recording/import support. It does not distribute personal High on Life game clips. The original signing identity is retained, and database migration preserves existing tasks and history. Install over the current app without uninstalling.
+
+Phone listening, lock-screen, Bluetooth, reboot, TalkBack, and actual package-upgrade checks remain to be performed on a physical phone.

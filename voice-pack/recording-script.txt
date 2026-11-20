@@ -1,0 +1,77 @@
+Bite Originals
+Awaiting human recordings; this file contains scripts, not audio.
+Playful, conversational sidekick. Warm sarcasm; never genuinely cruel. Natural pace, one complete sentence per file. No music or sound effects.
+
+Four human performances per situation. Record each file separately.
+
+CREATED
+CREATED/01.wav  Another side quest. Your collection is getting suspicious.
+CREATED/02.wav  Added. A bold move from our planning department.
+CREATED/03.wav  A fresh task. Let us try the finishing part.
+CREATED/04.wav  Your list grows. Your legend awaits a checkmark.
+
+STARTED
+STARTED/01.wav  Movement detected. Finally, some plot development.
+STARTED/02.wav  You started! I was running out of dramatic sighs.
+STARTED/03.wav  There you go. The loading screen finally ended.
+STARTED/04.wav  First step taken. Your couch will recover.
+
+COMPLETED
+COMPLETED/01.wav  You finished! I had a whole roast prepared.
+COMPLETED/02.wav  Task defeated. Your reward is slightly less chaos.
+COMPLETED/03.wav  Look at you, collecting victories instead of excuses.
+COMPLETED/04.wav  One less task. Suspiciously competent behavior.
+
+COMPLETED_LATE
+COMPLETED_LATE/01.wav  Late, but done. The missing-task poster can come down.
+COMPLETED_LATE/02.wav  The deadline forgives you. I need a minute.
+COMPLETED_LATE/03.wav  Finished at last. We can cancel the search party.
+COMPLETED_LATE/04.wav  A late victory still deserves a tiny parade.
+
+OVERDUE
+OVERDUE/01.wav  Your deadline called. I said you were buffering.
+OVERDUE/02.wav  Plot twist: ignoring it still has not finished it.
+OVERDUE/03.wav  Your task is aging like a forgotten sandwich.
+OVERDUE/04.wav  That deadline left. Your task stayed for dinner.
+
+SNOOZE
+SNOOZE/01.wav  Later again? Your future self just requested a meeting.
+SNOOZE/02.wav  Rescheduled. Your future self just requested a meeting.
+SNOOZE/03.wav  Later it is. The task packed an overnight bag.
+SNOOZE/04.wav  Rescheduled. The checkbox is practicing patience.
+
+SNOOZE_REPEAT
+SNOOZE_REPEAT/01.wav  This task has visited tomorrow more than you have.
+SNOOZE_REPEAT/02.wav  Another postponement. Even the snooze button needs a break.
+SNOOZE_REPEAT/03.wav  This task needs frequent flyer points for postponements.
+SNOOZE_REPEAT/04.wav  Another delay. The calendar has started recognizing you.
+
+IDLE
+IDLE/01.wav  Your list called. It misses those checkmarks.
+IDLE/02.wav  Plot twist available: finish one small thing.
+IDLE/03.wav  The staring contest is over. Your checkbox won.
+IDLE/04.wav  One small move. We can negotiate the sequel later.
+
+TINY
+TINY/01.wav  Tiny task. Huge suspense. Where is the movie trailer?
+TINY/02.wav  We have discussed this longer than it actually takes.
+TINY/03.wav  Five minutes of effort. A full season of suspense.
+TINY/04.wav  This task is smaller than your excuse collection.
+
+ABANDON
+ABANDON/01.wav  Welcome back. The checkboxes missed your complete lack of attention.
+ABANDON/02.wav  Back already? Your responsibilities saved you a seat.
+ABANDON/03.wav  Your tasks kept your seat warm. Very considerate.
+ABANDON/04.wav  The list survived your disappearing act. Ready now?
+
+PLAN_DAY
+PLAN_DAY/01.wav  No tasks? Bold of you to call that a plan.
+PLAN_DAY/02.wav  One tiny task. Give this day a plot.
+PLAN_DAY/03.wav  Give today one mission. Even a tiny one counts.
+PLAN_DAY/04.wav  Blank canvas. Excellent time for one small task.
+
+NOTIFICATION_CLEARED
+NOTIFICATION_CLEARED/01.wav  Nice swipe. Your plans didn't move.
+NOTIFICATION_CLEARED/02.wav  Notification gone. Procrastination remains undefeated.
+NOTIFICATION_CLEARED/03.wav  Excellent swipe technique. Now try a checkmark.
+NOTIFICATION_CLEARED/04.wav  You cleared the message. The mission remains.
