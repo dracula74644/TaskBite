@@ -41,6 +41,7 @@ class NotificationFlowTest {
         }
         shadowOf(manager).setNotificationPolicyAccessGranted(true)
         manager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
+        installTestVoicePack(app)
         val plays = mutableListOf<Int>()
         ShadowAudioTrack.addAudioDataListener { _, bytes, _ -> plays.add(bytes.contentHashCode()) }
         return plays
@@ -69,8 +70,8 @@ class NotificationFlowTest {
         compose.activityRule.scenario.moveToState(Lifecycle.State.RESUMED)
         compose.waitUntil(10_000) { plays.size == 1 }
         assertEquals("opened", NotificationReactions.find(app, n.token)!!.state)
-        val clip = VoiceLibrary(app).bundled(RoastKind.STARTED).single {
-            app.assets.open(it.asset!!).use(PcmAudio::read).samples.contentHashCode() == plays.single()
+        val clip = VoiceLibrary(app).bundled(RoastKind.NOTIFICATION_OPENED).single {
+            it.pcm(app).samples.contentHashCode() == plays.single()
         }
         compose.onNodeWithTag("today_tasks").performScrollToNode(hasTestTag("reaction_caption"))
         compose.onNodeWithTag("reaction_caption").assertTextEquals(clip.caption!!)
@@ -128,7 +129,7 @@ class NotificationFlowTest {
             plays.size == 1 && DeliveryStatus.report(app).any { it.contains("Recording played") } && shadowOf(controller.get()).isStoppedBySelf
         }
         val played = VoiceLibrary(app).bundled(RoastKind.NOTIFICATION_CLEARED).single {
-            app.assets.open(it.asset!!).use(PcmAudio::read).samples.contentHashCode() == plays.single()
+            it.pcm(app).samples.contentHashCode() == plays.single()
         }
         assertEquals(played.caption, ShadowToast.getTextOfLatestToast())
         assertEquals(1, ShadowToast.shownToastCount())

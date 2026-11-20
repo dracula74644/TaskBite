@@ -215,6 +215,78 @@
         "file": "NOTIFICATION_CLEARED/04.wav",
         "line": "You cleared the message. The mission remains."
       }
+    ],
+    "STILL_WORKING": [
+      {
+        "file": "STILL_WORKING/01.wav",
+        "line": "Still working? Your task is awaiting the season finale."
+      },
+      {
+        "file": "STILL_WORKING/02.wav",
+        "line": "Started is lovely. Finished would really steal the show."
+      },
+      {
+        "file": "STILL_WORKING/03.wav",
+        "line": "That task is started. Shall we audition the finish?"
+      },
+      {
+        "file": "STILL_WORKING/04.wav",
+        "line": "Still in progress? Even loading screens take a break."
+      }
+    ],
+    "LOW_PRIORITY": [
+      {
+        "file": "LOW_PRIORITY/01.wav",
+        "line": "Everything low priority? Your list is unusually relaxed."
+      },
+      {
+        "file": "LOW_PRIORITY/02.wav",
+        "line": "A very chill list. Let us give something a turn."
+      },
+      {
+        "file": "LOW_PRIORITY/03.wav",
+        "line": "Low priority, high potential for a little progress."
+      },
+      {
+        "file": "LOW_PRIORITY/04.wav",
+        "line": "All low priority? Start anywhere; surprise the list."
+      }
+    ],
+    "SMALL_LIST": [
+      {
+        "file": "SMALL_LIST/01.wav",
+        "line": "Short list. Plenty of room for a little progress."
+      },
+      {
+        "file": "SMALL_LIST/02.wav",
+        "line": "A small cast of tasks. Give one its moment."
+      },
+      {
+        "file": "SMALL_LIST/03.wav",
+        "line": "A few tasks waiting. One checkmark would change the scenery."
+      },
+      {
+        "file": "SMALL_LIST/04.wav",
+        "line": "Small list, dramatic pause. Shall we move the plot?"
+      }
+    ],
+    "NOTIFICATION_OPENED": [
+      {
+        "file": "NOTIFICATION_OPENED/01.wav",
+        "line": "You opened the reminder. The task awaits its turn."
+      },
+      {
+        "file": "NOTIFICATION_OPENED/02.wav",
+        "line": "Attention acquired. A checkbox would make this a sequel."
+      },
+      {
+        "file": "NOTIFICATION_OPENED/03.wav",
+        "line": "Reminder opened. Your task is waiting for its debut."
+      },
+      {
+        "file": "NOTIFICATION_OPENED/04.wav",
+        "line": "Welcome to the reminder. Shall we try the task?"
+      }
     ]
   },
   "SWEET": {
@@ -432,6 +504,78 @@
       {
         "file": "NOTIFICATION_CLEARED/04.wav",
         "line": "Message dismissed, sweetheart. Your little mission is still waiting."
+      }
+    ],
+    "STILL_WORKING": [
+      {
+        "file": "STILL_WORKING/01.wav",
+        "line": "Still working, babe? I am cheering for your little finish."
+      },
+      {
+        "file": "STILL_WORKING/02.wav",
+        "line": "Started looks cute. Finished would look even cuter."
+      },
+      {
+        "file": "STILL_WORKING/03.wav",
+        "line": "Your started task misses its finish line, sweetheart."
+      },
+      {
+        "file": "STILL_WORKING/04.wav",
+        "line": "Take your time, cutie. Then give that checkbox some attention."
+      }
+    ],
+    "LOW_PRIORITY": [
+      {
+        "file": "LOW_PRIORITY/01.wav",
+        "line": "A gentle list, sweetheart. Pick one little win."
+      },
+      {
+        "file": "LOW_PRIORITY/02.wav",
+        "line": "Low pressure, babe. Your first little step awaits."
+      },
+      {
+        "file": "LOW_PRIORITY/03.wav",
+        "line": "A relaxed list, cutie. Shall we start something together?"
+      },
+      {
+        "file": "LOW_PRIORITY/04.wav",
+        "line": "Nothing urgent, sweetheart. Still room for a tiny victory."
+      }
+    ],
+    "SMALL_LIST": [
+      {
+        "file": "SMALL_LIST/01.wav",
+        "line": "A few little tasks, cutie. Give one some attention."
+      },
+      {
+        "file": "SMALL_LIST/02.wav",
+        "line": "Small list, sweetheart. Plenty of room for a victory."
+      },
+      {
+        "file": "SMALL_LIST/03.wav",
+        "line": "Just a few missions, babe. I am cheering already."
+      },
+      {
+        "file": "SMALL_LIST/04.wav",
+        "line": "A little list for my favorite little overthinker."
+      }
+    ],
+    "NOTIFICATION_OPENED": [
+      {
+        "file": "NOTIFICATION_OPENED/01.wav",
+        "line": "You noticed me, babe. Your task would love that too."
+      },
+      {
+        "file": "NOTIFICATION_OPENED/02.wav",
+        "line": "Hey, cutie. One little step while you are here?"
+      },
+      {
+        "file": "NOTIFICATION_OPENED/03.wav",
+        "line": "Opened, sweetheart. Your little mission is still waiting."
+      },
+      {
+        "file": "NOTIFICATION_OPENED/04.wav",
+        "line": "Babe, hello. Shall we turn that tap into progress?"
       }
     ]
   }

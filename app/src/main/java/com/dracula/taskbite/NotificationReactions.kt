@@ -81,7 +81,7 @@ object NotificationReactions {
         app.getSystemService(NotificationManager::class.java).cancel(n.tag, n.id)
         if (!app.preferences.notificationReactions || (!n.test && app.preferences.teasingPaused(now)) || !stillRelevant(app, n)) return null
         DeliveryStatus.event(app, "Notification opened")
-        return VoiceLibrary(app).reaction(RoastKind.STARTED)
+        return VoiceLibrary(app).reaction(RoastKind.NOTIFICATION_OPENED)
     }
     /** Fast claim before starting a playback job. Clear-all must not restart the first reaction. */
     @Synchronized fun claimDismissal(context: Context, token: String, now: Long): BiteNotice? {
@@ -140,7 +140,9 @@ object NotificationReactions {
             if (n.state == "posted" && active.none { it.tag == n.tag && it.id == n.id && it.notification.extras.getString(TOKEN) == n.token }) continue
             val title = if (n.state == "opened") "Opened, still waiting: ${nudge.task?.title ?: "one small plan"}"
                 else "No response yet: ${nudge.task?.title ?: "your empty list"}"
-            return title to if (n.state == "opened") RoastKind.ABANDON else RoastKind.IDLE
+            // A reminder being opened or left visible does not change the task situation.
+            // In particular, an empty list must never get a pending-task recording.
+            return title to nudge.scenario.kind
         }
         return null
     }

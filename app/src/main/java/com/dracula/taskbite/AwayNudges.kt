@@ -13,10 +13,10 @@ data class AwayState(
 )
 
 enum class AwayScenario(val kind: RoastKind) {
-    OVERDUE_TASK(RoastKind.OVERDUE), STILL_WORKING(RoastKind.IDLE),
+    OVERDUE_TASK(RoastKind.OVERDUE), STILL_WORKING(RoastKind.STILL_WORKING),
     POSTPONED_TASK(RoastKind.SNOOZE_REPEAT), TINY_TASK(RoastKind.TINY),
-    LEFT_WITHOUT_PROGRESS(RoastKind.ABANDON), LOW_PRIORITY(RoastKind.IDLE),
-    SMALL_LIST(RoastKind.IDLE), NO_PROGRESS(RoastKind.IDLE), EMPTY_DAY(RoastKind.PLAN_DAY);
+    LEFT_WITHOUT_PROGRESS(RoastKind.ABANDON), LOW_PRIORITY(RoastKind.LOW_PRIORITY),
+    SMALL_LIST(RoastKind.SMALL_LIST), NO_PROGRESS(RoastKind.IDLE), EMPTY_DAY(RoastKind.PLAN_DAY);
     fun title(task: Task?, taskCount: Int = 0): String = when (this) {
         OVERDUE_TASK -> "The deadline escaped: ${task?.title.orEmpty()}"
         LEFT_WITHOUT_PROGRESS -> "One small step: ${task?.title.orEmpty()}"

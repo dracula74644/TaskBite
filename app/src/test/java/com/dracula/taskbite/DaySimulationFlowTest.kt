@@ -27,6 +27,7 @@ class DaySimulationFlowTest {
     @get:Rule val compose = createAndroidComposeRule<MainActivity>()
     private val app get() = compose.activity.application as TaskBiteApp
     private fun open(voices: Boolean = false) {
+        installTestVoicePack(app)
         app.preferences.apply { planningNudge = false; actionVoice = false; reminders = false; teasingStyle = TeasingStyle.CLASSIC }
         compose.onNodeWithText("Let's get something done").performScrollTo().performClick()
         runBlocking { app.repository.save(Task(title = "My real task", dueAt = System.currentTimeMillis() + 86_400_000)) }
@@ -130,7 +131,7 @@ class DaySimulationFlowTest {
 
     @Test fun previewPlaysRealSelectedRecordingAndQuietHoursDoNotPlay() {
         open(voices = true)
-        app.preferences.apply { voiceActor = "sean"; alertVolume = 60 }
+        app.preferences.apply { voiceActor = "bite_original"; alertVolume = 60 }
         val audio = app.getSystemService(AudioManager::class.java)
         audio.ringerMode = AudioManager.RINGER_MODE_NORMAL
         audio.setStreamVolume(AudioManager.STREAM_MUSIC, 5, 0)
@@ -142,7 +143,7 @@ class DaySimulationFlowTest {
         compose.onNodeWithText("Next event").performClick()
         compose.waitUntil(10_000) { plays.size == 1 }
         val expected = VoiceLibrary(app).bundled(RoastKind.PLAN_DAY).map { clip ->
-            app.assets.open(clip.asset!!).use(PcmAudio::read).samples.contentHashCode()
+            clip.pcm(app).samples.contentHashCode()
         }
         assertTrue(plays.single() in expected)
         val original = plays.single()

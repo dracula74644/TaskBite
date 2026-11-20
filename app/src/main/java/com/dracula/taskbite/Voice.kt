@@ -80,8 +80,8 @@ class Voice(private val context: Context) {
     }
 
     suspend fun react(reaction: VoiceReaction): VoiceResult {
-        if (reaction.clip == null) { stop(); return VoiceResult.NO_RECORDING }
         reactionBlockReason()?.let { return it }
+        if (reaction.clip == null) { stop(); return VoiceResult.NO_RECORDING }
         return play(reaction)
     }
 

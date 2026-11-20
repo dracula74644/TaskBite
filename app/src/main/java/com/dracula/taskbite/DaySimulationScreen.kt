@@ -237,7 +237,7 @@ import java.time.format.DateTimeFormatter
     if (jumpOpen) AlertDialog(onDismissRequest = { jumpOpen = false }, title = { Text("Choose a situation") }, text = {
         LazyColumn(Modifier.heightIn(max = 400.dp).testTag("simulation_scenarios")) {
             item { Text("Away scenarios", style = MaterialTheme.typography.titleMedium) }
-            items(listOf("empty" to "An empty list", "small" to "Just three tasks", "low" to "Only low-priority tasks")) { (preset, title) ->
+            items(listOf("empty" to "An empty list", "small" to "Just three tasks", "low" to "Only low-priority tasks", "started" to "Started but unfinished")) { (preset, title) ->
                 TextButton(onClick = { jumpOpen = false; perform("preset:$preset", replace = true) },
                     modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(title) }
             }

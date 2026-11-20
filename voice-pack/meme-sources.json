@@ -1,0 +1,413 @@
+{
+  "notice": "Short existing dialogue excerpts preloaded at the user's request. Original performances remain their owners' property; source references do not imply endorsement. Captions checked against source context and local speech recognition; no synthesized speech.",
+  "clips": {
+    "do_something": {
+      "page": "https://www.myinstants.com/en/instant/do-something-87022/",
+      "audio": "https://www.myinstants.com/media/sounds/ahfzvei0ky3amovpt3juvuzitv2v3gob1vpwvtf2.mp3",
+      "sourceSha256": "17e0f62fc09641c1d171ce74be914c3a6b4db8c0abf173b6e1736bb2de8f575e",
+      "start": 0,
+      "end": 1.44,
+      "caption": "Do something!",
+      "explicit": false
+    },
+    "plan_start": {
+      "page": "https://www.myinstants.com/en/instant/when-do-we-plan-to-start-79068/",
+      "audio": "https://www.myinstants.com/media/sounds/when-do-we-plan-to-start.mp3",
+      "sourceSha256": "cf64390230da71e9415818659ebc5cbfdcd57032f1db9bce3f1a75421c712526",
+      "start": 0,
+      "end": 2.06,
+      "caption": "When do we plan to start?",
+      "explicit": false
+    },
+    "what_waiting": {
+      "page": "https://www.myinstants.com/en/instant/the-incredibles-what-are-you-waiting-for-42482/",
+      "audio": "https://www.myinstants.com/media/sounds/the-incredibles-what-are-you-waiting-for.mp3",
+      "sourceSha256": "dbec5a1b8a2252b31cb6371ab0ffa18c881f7053c9b087e7faa649ab72520b5c",
+      "start": 0,
+      "end": 1.35,
+      "caption": "What are you waiting for?",
+      "explicit": false
+    },
+    "get_on": {
+      "page": "https://www.myinstants.com/en/instant/get-on-with-it/",
+      "audio": "https://www.myinstants.com/media/sounds/get-on-with-it.mp3",
+      "sourceSha256": "be3a15a736e5747535b8c6c431e3c7c8ffb34fabe44b4d473d6fc3b3a0f379c4",
+      "start": 0,
+      "end": 1.08,
+      "caption": "Get on with it!",
+      "explicit": false
+    },
+    "get_together": {
+      "page": "https://www.myinstants.com/de/instant/get-your-shit-together-57589/",
+      "audio": "https://www.myinstants.com/media/sounds/getyourshttogether.mp3",
+      "sourceSha256": "39bb1ec7388ac4b32fba8f107020bad96b2ce442f57a20614981569ef2c49068",
+      "start": 2.84,
+      "end": 4.65,
+      "caption": "Get your shit together, will you?",
+      "explicit": true
+    },
+    "hurry_mario": {
+      "page": "https://www.myinstants.com/en/instant/mario-hurry-up-already-sfx-42414/",
+      "audio": "https://www.myinstants.com/media/sounds/mario-hurry-up-already-sfx.mp3",
+      "sourceSha256": "9935d27623746b5046d51b8a5d93da5c6dced3e6b5205c39b40f61b6d0f63462",
+      "start": 0,
+      "end": 3.53,
+      "caption": "Hurry up already!",
+      "explicit": false
+    },
+    "you_late": {
+      "page": "https://www.myinstants.com/en/instant/youre-late/",
+      "audio": "https://www.myinstants.com/media/sounds/youre-late.mp3",
+      "sourceSha256": "104202cfc6cd233ac6d4eb7b56ce556e2810f2526e2b274683971efe85a4051f",
+      "start": 0,
+      "end": 1.18,
+      "caption": "You're late.",
+      "explicit": false
+    },
+    "yesterday_tomorrow": {
+      "page": "https://www.myinstants.com/en/instant/shia-yesterdays-said-tomorrow-/",
+      "audio": "https://www.myinstants.com/media/sounds/shia-yesterday-you-said-tomorrow.mp3",
+      "sourceSha256": "92a40bee03d4326dcfce2e0ebe5e673908b57bbaa774fed12fc9004ff21f7121",
+      "start": 0,
+      "end": 1.8,
+      "caption": "Yesterday you said tomorrow.",
+      "explicit": false
+    },
+    "no_tomorrow": {
+      "page": "https://www.myinstants.com/en/instant/there-is-no-tomorrow-25353/",
+      "audio": "https://www.myinstants.com/media/sounds/there-is-no-tomorrow.mp3",
+      "sourceSha256": "60e6b2e34c5507b4df0894d7285112ef4afdcb7e27db9f0bc64d7229e6dddb8a",
+      "start": 6.04,
+      "end": 8.05,
+      "caption": "There is no tomorrow!",
+      "explicit": false
+    },
+    "tomorrow_sure": {
+      "page": "https://www.myinstants.com/en/instant/tomorrow-for-sure/",
+      "audio": "https://www.myinstants.com/media/sounds/tomorrow-for-sure.mp3",
+      "sourceSha256": "a5ff58b6c95ae1fd4e313a46fb995b34112b8ee5911f25e69bd828434c27ea73",
+      "start": 0,
+      "end": 2.3,
+      "caption": "Tomorrow for sure.",
+      "explicit": false
+    },
+    "again": {
+      "page": "https://www.myinstants.com/en/instant/ah-shit-here-we-go-again-cj-28334/",
+      "audio": "https://www.myinstants.com/media/sounds/y2mate_OQnyD9i.mp3",
+      "sourceSha256": "a56def9539f112c31797e5d4ce3d8fcb9728ed4a5efba8a9413dd5c80a85d6be",
+      "start": 0,
+      "end": 3.11,
+      "caption": "Ah shit, here we go again.",
+      "explicit": true
+    },
+    "ignore": {
+      "page": "https://www.myinstants.com/en/instant/stop-ignoring-me-44631/",
+      "audio": "https://www.myinstants.com/media/sounds/stop-ignoring-me.mp3",
+      "sourceSha256": "10f865b9a20f0804464e03ee3a4e11f552fab4fd9e9ac0337653d793761d2fda",
+      "start": 0,
+      "end": 2.92,
+      "caption": "Stop ignoring me!",
+      "explicit": false
+    },
+    "where_going": {
+      "page": "https://www.myinstants.com/en/instant/where-are-you-going-38802/",
+      "audio": "https://www.myinstants.com/media/sounds/where-are-you-going.mp3",
+      "sourceSha256": "8adc54614e9ae1babd0b09646420656f7a6e9fc4ee862fbecd3053f1b8c4b595",
+      "start": 0.45,
+      "end": 1.78,
+      "caption": "Where are you going?",
+      "explicit": false
+    },
+    "come_back": {
+      "page": "https://www.myinstants.com/en/instant/come-back-here-stop-28500/",
+      "audio": "https://www.myinstants.com/media/sounds/come-back-here-stop.mp3",
+      "sourceSha256": "90b33498173c3182c6dd0da6783f77c1307507920eec93fb91fffc837d29298a",
+      "start": 0,
+      "end": 1.47,
+      "caption": "Come back here! Stop!",
+      "explicit": false
+    },
+    "is_that_all": {
+      "page": "https://www.myinstants.com/en/instant/wesker-is-that-all/",
+      "audio": "https://www.myinstants.com/media/sounds/wesker-is-that-all.mp3",
+      "sourceSha256": "e6f103379346dfe1f979e54d172ebe6ddfcb828f4ee28d212ab9dcf1b03ba885",
+      "start": 1.02,
+      "end": 2.73,
+      "caption": "Is that all you have?",
+      "explicit": false
+    },
+    "easy": {
+      "page": "https://www.myinstants.com/en/instant/easy-peasy-lemon-squeezy-csgo-73385/",
+      "audio": "https://www.myinstants.com/media/sounds/easy-peasy-lemon-squeezy-csgo.mp3",
+      "sourceSha256": "343f7ddd63c98cd9e185ee31a18176a989b667c437acc56818c6d18e8e5da983",
+      "start": 0,
+      "end": 2.85,
+      "caption": "Easy peasy, lemon squeezy.",
+      "explicit": false
+    },
+    "finally": {
+      "page": "https://www.myinstants.com/en/instant/finally-6013/",
+      "audio": "https://www.myinstants.com/media/sounds/finally_eivLbw1.mp3",
+      "sourceSha256": "24d7481b95eca52f018ae3b08bb9c5dd7c3766e751dc4b4a9fbd58eb8ed0ad58",
+      "start": 1.72,
+      "end": 3.3,
+      "caption": "Finally!",
+      "explicit": false
+    },
+    "do_it": {
+      "page": "https://www.myinstants.com/en/instant/just-do-it/",
+      "audio": "https://www.myinstants.com/media/sounds/just-do-it.mp3",
+      "sourceSha256": "45fdc9ef47fb8e8706ed20de50ea9b140c5c73289c06cf700ed9823e33dabbf9",
+      "start": 0,
+      "end": 4.15,
+      "caption": "Do it! Just do it!",
+      "explicit": false
+    },
+    "another_one": {
+      "page": "https://www.myinstants.com/en/instant/dj-khaled-another-one/",
+      "audio": "https://www.myinstants.com/media/sounds/another-one_1.mp3",
+      "sourceSha256": "8e1b4cbe1d2250d31c7cb017b61317aaf0890fff990bb6d4eb40880a97f8c350",
+      "start": 0,
+      "end": 0.87,
+      "caption": "Another one.",
+      "explicit": false
+    },
+    "plan": {
+      "page": "https://www.myinstants.com/en/instant/this-is-the-greatest-plan-38860/",
+      "audio": "https://www.myinstants.com/media/sounds/this-is-the-greatest-plan_ehmqna0.mp3",
+      "sourceSha256": "29bcc1af4c9e25193fced6909cb9cb4ce914cfa90e33d77c8eed678790131d6e",
+      "start": 1.85,
+      "end": 4.9,
+      "caption": "This is the greatest plan!",
+      "explicit": false
+    },
+    "still_working": {
+      "page": "https://www.myinstants.com/en/instant/we-are-not-done-yet-9675/",
+      "audio": "https://www.myinstants.com/media/sounds/we-are-not-done-yet_z5Crh62.mp3",
+      "sourceSha256": "ac5b12c6952d74acbb3551ba0d772602439c79394683e5d14baa749328912840",
+      "start": 0,
+      "end": 2.25,
+      "caption": "We are not done yet.",
+      "explicit": false
+    },
+    "did_it": {
+      "page": "https://www.myinstants.com/en/instant/you-did-it-69927/",
+      "audio": "https://www.myinstants.com/media/sounds/wonka_youdidit.mp3",
+      "sourceSha256": "bc1262b0b723f56131d16a3e1a3e52c6b51358369ae6f08b334592da574b199d",
+      "start": 0,
+      "end": 1.22,
+      "caption": "You did it!",
+      "explicit": false
+    },
+    "any_day": {
+      "page": "https://www.myinstants.com/en/instant/any-f-day-now-58563/",
+      "audio": "https://www.myinstants.com/media/sounds/any-f-day-now.mp3",
+      "sourceSha256": "10376d3759f0323414598846e24d9524886fcc94923e8893ae3544bd61f0f349",
+      "start": 0,
+      "end": 1.65,
+      "caption": "Any fucking day now.",
+      "explicit": true
+    },
+    "taking_long": {
+      "page": "https://www.myinstants.com/en/instant/wtf-is-taking-so-long-1440/",
+      "audio": "https://www.myinstants.com/media/sounds/wtf-is-taking-so-long.mp3",
+      "sourceSha256": "5100f3bd53ea5b132b691e92e64922c2f1fc024e56ebd448d97160da01e1658a",
+      "start": 0,
+      "end": 1.44,
+      "caption": "What the fuck is taking so long?",
+      "explicit": true
+    },
+    "hello": {
+      "page": "https://www.myinstants.com/en/instant/hello-there-obi-wan-39670/",
+      "audio": "https://www.myinstants.com/media/sounds/obi-wan-hello-there.mp3",
+      "sourceSha256": "ac8254dfd92c48b9654f4ec9080c54408a6b7c9ebe8f9bab72c012d641bce192",
+      "start": 0,
+      "end": 0.82,
+      "caption": "Hello there!",
+      "explicit": false
+    },
+    "about_time": {
+      "page": "https://www.myinstants.com/en/instant/lebron-about-damn-time-6916/",
+      "audio": "https://www.myinstants.com/media/sounds/about-damn-time.mp3",
+      "sourceSha256": "794d25ab37910f48c7f404c38f18002a4ee6f829c0a23ded6a0c11c741eee986",
+      "start": 0.9,
+      "end": 2.43,
+      "caption": "It's about damn time.",
+      "explicit": true
+    }
+  },
+  "packs": [
+    {
+      "id": "meme_sidekick",
+      "name": "Meme Sidekick",
+      "explicit": false,
+      "description": "21 real meme/dialogue clips \u00b7 no strong language \u00b7 all 16 situations",
+      "categories": {
+        "PLAN_DAY": [
+          "plan_start",
+          "what_waiting",
+          "do_something",
+          "get_on"
+        ],
+        "OVERDUE": [
+          "you_late",
+          "hurry_mario",
+          "get_on"
+        ],
+        "SNOOZE": [
+          "tomorrow_sure",
+          "no_tomorrow"
+        ],
+        "SNOOZE_REPEAT": [
+          "yesterday_tomorrow",
+          "no_tomorrow",
+          "tomorrow_sure"
+        ],
+        "IDLE": [
+          "do_something",
+          "what_waiting",
+          "get_on"
+        ],
+        "TINY": [
+          "easy",
+          "do_it",
+          "get_on"
+        ],
+        "ABANDON": [
+          "where_going",
+          "come_back"
+        ],
+        "CREATED": [
+          "another_one",
+          "plan"
+        ],
+        "STARTED": [
+          "do_it",
+          "get_on"
+        ],
+        "COMPLETED": [
+          "did_it",
+          "easy"
+        ],
+        "COMPLETED_LATE": [
+          "finally",
+          "did_it"
+        ],
+        "NOTIFICATION_CLEARED": [
+          "ignore",
+          "come_back",
+          "where_going"
+        ],
+        "NOTIFICATION_OPENED": [
+          "hello",
+          "what_waiting"
+        ],
+        "STILL_WORKING": [
+          "still_working",
+          "hurry_mario",
+          "get_on"
+        ],
+        "LOW_PRIORITY": [
+          "is_that_all",
+          "easy",
+          "get_on"
+        ],
+        "SMALL_LIST": [
+          "is_that_all",
+          "do_something",
+          "get_on"
+        ]
+      }
+    },
+    {
+      "id": "meme_unfiltered",
+      "name": "Unfiltered Memes",
+      "explicit": true,
+      "description": "26 real meme/dialogue clips \u00b7 strong language \u00b7 all 16 situations",
+      "categories": {
+        "PLAN_DAY": [
+          "plan_start",
+          "what_waiting",
+          "do_something",
+          "get_on",
+          "get_together"
+        ],
+        "OVERDUE": [
+          "you_late",
+          "hurry_mario",
+          "get_on",
+          "any_day"
+        ],
+        "SNOOZE": [
+          "tomorrow_sure",
+          "no_tomorrow"
+        ],
+        "SNOOZE_REPEAT": [
+          "yesterday_tomorrow",
+          "no_tomorrow",
+          "tomorrow_sure",
+          "again"
+        ],
+        "IDLE": [
+          "do_something",
+          "what_waiting",
+          "get_on",
+          "get_together",
+          "any_day"
+        ],
+        "TINY": [
+          "easy",
+          "do_it",
+          "get_on"
+        ],
+        "ABANDON": [
+          "where_going",
+          "come_back"
+        ],
+        "CREATED": [
+          "another_one",
+          "plan"
+        ],
+        "STARTED": [
+          "do_it",
+          "get_on"
+        ],
+        "COMPLETED": [
+          "did_it",
+          "easy"
+        ],
+        "COMPLETED_LATE": [
+          "finally",
+          "did_it",
+          "about_time"
+        ],
+        "NOTIFICATION_CLEARED": [
+          "ignore",
+          "come_back",
+          "where_going"
+        ],
+        "NOTIFICATION_OPENED": [
+          "hello",
+          "what_waiting"
+        ],
+        "STILL_WORKING": [
+          "still_working",
+          "hurry_mario",
+          "get_on",
+          "taking_long",
+          "any_day"
+        ],
+        "LOW_PRIORITY": [
+          "is_that_all",
+          "easy",
+          "get_on"
+        ],
+        "SMALL_LIST": [
+          "is_that_all",
+          "do_something",
+          "get_on"
+        ]
+      }
+    }
+  ]
+}

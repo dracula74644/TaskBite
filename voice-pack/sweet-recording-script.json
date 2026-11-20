@@ -218,6 +218,78 @@
         "file": "NOTIFICATION_CLEARED/04.wav",
         "line": "Message dismissed, sweetheart. Your little mission is still waiting."
       }
+    ],
+    "STILL_WORKING": [
+      {
+        "file": "STILL_WORKING/01.wav",
+        "line": "Still working, babe? I am cheering for your little finish."
+      },
+      {
+        "file": "STILL_WORKING/02.wav",
+        "line": "Started looks cute. Finished would look even cuter."
+      },
+      {
+        "file": "STILL_WORKING/03.wav",
+        "line": "Your started task misses its finish line, sweetheart."
+      },
+      {
+        "file": "STILL_WORKING/04.wav",
+        "line": "Take your time, cutie. Then give that checkbox some attention."
+      }
+    ],
+    "LOW_PRIORITY": [
+      {
+        "file": "LOW_PRIORITY/01.wav",
+        "line": "A gentle list, sweetheart. Pick one little win."
+      },
+      {
+        "file": "LOW_PRIORITY/02.wav",
+        "line": "Low pressure, babe. Your first little step awaits."
+      },
+      {
+        "file": "LOW_PRIORITY/03.wav",
+        "line": "A relaxed list, cutie. Shall we start something together?"
+      },
+      {
+        "file": "LOW_PRIORITY/04.wav",
+        "line": "Nothing urgent, sweetheart. Still room for a tiny victory."
+      }
+    ],
+    "SMALL_LIST": [
+      {
+        "file": "SMALL_LIST/01.wav",
+        "line": "A few little tasks, cutie. Give one some attention."
+      },
+      {
+        "file": "SMALL_LIST/02.wav",
+        "line": "Small list, sweetheart. Plenty of room for a victory."
+      },
+      {
+        "file": "SMALL_LIST/03.wav",
+        "line": "Just a few missions, babe. I am cheering already."
+      },
+      {
+        "file": "SMALL_LIST/04.wav",
+        "line": "A little list for my favorite little overthinker."
+      }
+    ],
+    "NOTIFICATION_OPENED": [
+      {
+        "file": "NOTIFICATION_OPENED/01.wav",
+        "line": "You noticed me, babe. Your task would love that too."
+      },
+      {
+        "file": "NOTIFICATION_OPENED/02.wav",
+        "line": "Hey, cutie. One little step while you are here?"
+      },
+      {
+        "file": "NOTIFICATION_OPENED/03.wav",
+        "line": "Opened, sweetheart. Your little mission is still waiting."
+      },
+      {
+        "file": "NOTIFICATION_OPENED/04.wav",
+        "line": "Babe, hello. Shall we turn that tap into progress?"
+      }
     ]
   }
 }

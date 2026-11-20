@@ -24,13 +24,14 @@ class ReactionFlowTest {
 
     private fun setup(): MutableList<Int> {
         compose.onNodeWithText("Let's get something done").performScrollTo().performClick()
-        app.preferences.apply { actionVoice = true; quietEnabled = false; voiceActor = "sean"; planningNudge = false }
+        app.preferences.apply { actionVoice = true; quietEnabled = false; planningNudge = false }
         val audio = app.getSystemService(AudioManager::class.java)
         audio.ringerMode = AudioManager.RINGER_MODE_NORMAL
         audio.setStreamVolume(AudioManager.STREAM_MUSIC, 5, 0)
         val notifications = app.getSystemService(NotificationManager::class.java)
         shadowOf(notifications).setNotificationPolicyAccessGranted(true)
         notifications.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
+        installTestVoicePack(app)
         val plays = mutableListOf<Int>()
         ShadowAudioTrack.addAudioDataListener { _, data, _ -> plays.add(data.contentHashCode()) }
         return plays
@@ -38,11 +39,11 @@ class ReactionFlowTest {
     private fun expect(plays: List<Int>, count: Int, kind: RoastKind) {
         compose.waitUntil(10_000) { plays.size == count }
         val expected = VoiceLibrary(app).bundled(kind).map { clip ->
-            app.assets.open(clip.asset!!).use(PcmAudio::read).samples.contentHashCode()
+            clip.pcm(app).samples.contentHashCode()
         }
         assertTrue("Wrong recording for $kind", plays.last() in expected)
         val match = VoiceLibrary(app).bundled(kind).single { clip ->
-            app.assets.open(clip.asset!!).use(PcmAudio::read).samples.contentHashCode() == plays.last()
+            clip.pcm(app).samples.contentHashCode() == plays.last()
         }
         compose.onNodeWithTag("today_tasks").performScrollToNode(hasTestTag("reaction_caption"))
         compose.onNodeWithTag("reaction_caption").assertTextEquals(match.caption!!)
@@ -93,7 +94,7 @@ class ReactionFlowTest {
         val plays = setup()
         app.preferences.apply { planningNudge = true; planningHour = 0; teasingStyle = TeasingStyle.SWEET }
         compose.activityRule.scenario.recreate()
-        compose.waitUntil(10_000) { compose.onAllNodesWithText("Text only · no Sweet teasing recording for this situation. Add one in Voice settings.").fetchSemanticsNodes().isNotEmpty() }
+        compose.waitUntil(10_000) { compose.onAllNodesWithText("Text only · no Sweet teasing recording for an empty day. Choose a pack covering this situation or add a recording.").fetchSemanticsNodes().isNotEmpty() }
         assertTrue(plays.isEmpty())
         compose.onNodeWithContentDescription("Play reaction").assertDoesNotExist()
         assertTrue(Roasts.sweetLines.getValue(RoastKind.PLAN_DAY).any { line ->

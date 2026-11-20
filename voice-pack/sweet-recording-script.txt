@@ -1,8 +1,6 @@
 Bite Sweet
 Scripts only; awaiting real human recordings.
-Affectionate, conversational teasing for your partner. Smile gently, use your natural voice, and sound encouraging. No imitation, music, or sound effects.
-
-Four human performances per situation. Record each file separately.
+64 human performances: four per situation.
 
 PLAN_DAY
 PLAN_DAY/01.wav  Babe, even your to-do list is playing hard to get.
@@ -75,3 +73,27 @@ NOTIFICATION_CLEARED/01.wav  Babe, smooth swipe. One little task next?
 NOTIFICATION_CLEARED/02.wav  Cute dodge, sweetheart. Your plans are still waiting.
 NOTIFICATION_CLEARED/03.wav  Nice swipe, babe. The task still wants your number.
 NOTIFICATION_CLEARED/04.wav  Message dismissed, sweetheart. Your little mission is still waiting.
+
+STILL_WORKING
+STILL_WORKING/01.wav  Still working, babe? I am cheering for your little finish.
+STILL_WORKING/02.wav  Started looks cute. Finished would look even cuter.
+STILL_WORKING/03.wav  Your started task misses its finish line, sweetheart.
+STILL_WORKING/04.wav  Take your time, cutie. Then give that checkbox some attention.
+
+LOW_PRIORITY
+LOW_PRIORITY/01.wav  A gentle list, sweetheart. Pick one little win.
+LOW_PRIORITY/02.wav  Low pressure, babe. Your first little step awaits.
+LOW_PRIORITY/03.wav  A relaxed list, cutie. Shall we start something together?
+LOW_PRIORITY/04.wav  Nothing urgent, sweetheart. Still room for a tiny victory.
+
+SMALL_LIST
+SMALL_LIST/01.wav  A few little tasks, cutie. Give one some attention.
+SMALL_LIST/02.wav  Small list, sweetheart. Plenty of room for a victory.
+SMALL_LIST/03.wav  Just a few missions, babe. I am cheering already.
+SMALL_LIST/04.wav  A little list for my favorite little overthinker.
+
+NOTIFICATION_OPENED
+NOTIFICATION_OPENED/01.wav  You noticed me, babe. Your task would love that too.
+NOTIFICATION_OPENED/02.wav  Hey, cutie. One little step while you are here?
+NOTIFICATION_OPENED/03.wav  Opened, sweetheart. Your little mission is still waiting.
+NOTIFICATION_OPENED/04.wav  Babe, hello. Shall we turn that tap into progress?

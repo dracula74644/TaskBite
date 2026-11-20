@@ -1,8 +1,6 @@
 Bite Originals
 Awaiting human recordings; this file contains scripts, not audio.
-Playful, conversational sidekick. Warm sarcasm; never genuinely cruel. Natural pace, one complete sentence per file. No music or sound effects.
-
-Four human performances per situation. Record each file separately.
+64 human performances: four per situation.
 
 CREATED
 CREATED/01.wav  Another side quest. Your collection is getting suspicious.
@@ -75,3 +73,27 @@ NOTIFICATION_CLEARED/01.wav  Nice swipe. Your plans didn't move.
 NOTIFICATION_CLEARED/02.wav  Notification gone. Procrastination remains undefeated.
 NOTIFICATION_CLEARED/03.wav  Excellent swipe technique. Now try a checkmark.
 NOTIFICATION_CLEARED/04.wav  You cleared the message. The mission remains.
+
+STILL_WORKING
+STILL_WORKING/01.wav  Still working? Your task is awaiting the season finale.
+STILL_WORKING/02.wav  Started is lovely. Finished would really steal the show.
+STILL_WORKING/03.wav  That task is started. Shall we audition the finish?
+STILL_WORKING/04.wav  Still in progress? Even loading screens take a break.
+
+LOW_PRIORITY
+LOW_PRIORITY/01.wav  Everything low priority? Your list is unusually relaxed.
+LOW_PRIORITY/02.wav  A very chill list. Let us give something a turn.
+LOW_PRIORITY/03.wav  Low priority, high potential for a little progress.
+LOW_PRIORITY/04.wav  All low priority? Start anywhere; surprise the list.
+
+SMALL_LIST
+SMALL_LIST/01.wav  Short list. Plenty of room for a little progress.
+SMALL_LIST/02.wav  A small cast of tasks. Give one its moment.
+SMALL_LIST/03.wav  A few tasks waiting. One checkmark would change the scenery.
+SMALL_LIST/04.wav  Small list, dramatic pause. Shall we move the plot?
+
+NOTIFICATION_OPENED
+NOTIFICATION_OPENED/01.wav  You opened the reminder. The task awaits its turn.
+NOTIFICATION_OPENED/02.wav  Attention acquired. A checkbox would make this a sequel.
+NOTIFICATION_OPENED/03.wav  Reminder opened. Your task is waiting for its debut.
+NOTIFICATION_OPENED/04.wav  Welcome to the reminder. Shall we try the task?

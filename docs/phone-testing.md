@@ -34,3 +34,9 @@ Use Sidekick → Test & troubleshoot → Send test notification for temporary te
 | Update download | With a newer public release available, check App updates | APK verifies; installation only starts after your explicit tap and Android confirmation | Not tested |
 
 Restore your normal font, DND and sound settings after testing. A simulator result or a successfully sent APK does not count as a physical-phone pass.
+
+## Preloaded meme packs (1.20)
+
+Not yet tested on a physical phone. Update through Bite's App updates screen. In Voice settings, select Meme Sidekick and preview An empty day. Check the spoken words against the caption. Select Unfiltered Memes to opt into strong language. Both packs must work with airplane mode enabled, without an additional download.
+
+Preview all 16 situations, reopen Bite, and restore a complete backup. Check that an empty-day notification still uses the empty-day pool after being opened or ignored. Notification-open audio must not claim a task started. Listen for cut-off syllables and volume consistency on the phone speaker.

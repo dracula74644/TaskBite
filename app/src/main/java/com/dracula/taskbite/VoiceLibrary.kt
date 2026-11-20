@@ -20,22 +20,29 @@ class VoiceLibrary(private val context: Context) {
     private fun JSONObject.actorRecords(): List<JSONObject> = getJSONArray("actors").let { list ->
         (0 until list.length()).map { list.getJSONObject(it) }
     }
-    private val records by lazy {
+    private var cachedRecords: List<JSONObject>? = null
+    private var cachedRevision = -1L
+    private val records: List<JSONObject> get() = synchronized(this) {
+        val revision = catalogRevision.get()
+        if (cachedRevision == revision) cachedRecords?.let { return@synchronized it }
         val base = baseCatalog.actorRecords()
-        val personal = listOf("voices/high_on_life/catalog.json", "voices/bite_original/catalog.json", "voices/bite_sweet/catalog.json").flatMap { path ->
-            runCatching { readCatalog(path).actorRecords() }.getOrDefault(emptyList())
+        val personal = PersonalVoicePacks.ids.flatMap { id ->
+            runCatching { readCatalog("voices/$id/catalog.json").actorRecords() }.getOrDefault(emptyList())
         }
-        base + personal + PersonalVoicePacks.records(context).filter { saved -> (base + personal).none { it.getString("id") == saved.getString("id") } }
+        (base + personal + PersonalVoicePacks.records(context).filter { saved -> (base + personal).none { it.getString("id") == saved.getString("id") } })
+            .also { cachedRecords = it; cachedRevision = revision }
     }
     private fun JSONObject.style() = optString("style", if (optString("id") == "bite_sweet" || optString("name") == "Bite Sweet") "SWEET" else "CLASSIC")
     fun actors(style: TeasingStyle? = null): List<VoiceActor> = records.filter { style == null || it.style() == style.name }
         .map { VoiceActor(it.getString("id"), it.getString("name"), it.optString("description")) }
-    fun bundled(kind: RoastKind, style: TeasingStyle = preferences.teasingStyle): List<VoiceClip> {
+    fun bundled(kind: RoastKind, style: TeasingStyle = preferences.teasingStyle, actorId: String = preferences.actorFor(style)): List<VoiceClip> {
         val matching = records.filter { it.style() == style.name }
-        val actor = matching.firstOrNull { it.getString("id") == preferences.actorFor(style) } ?: matching.firstOrNull() ?: return emptyList()
+        val actor = matching.firstOrNull { it.getString("id") == actorId } ?: matching.firstOrNull() ?: return emptyList()
+        // These older packs contain short acknowledgements, not empty-day or overdue roasts.
+        // Apply this to saved catalogs too, so an update cannot revive the wrong mapping.
+        if (actor.getString("id") in SHORT_REACTION_ACTORS && kind !in SHORT_REACTION_KINDS) return emptyList()
         val clips = actor.getJSONObject("categories").optJSONArray(kind.name)
-            ?.takeIf { it.length() > 0 } ?: if (style == TeasingStyle.CLASSIC)
-                actor.getJSONObject("categories").optJSONArray(kind.baseKind().name)?.takeIf { it.length() > 0 } else null
+            ?.takeIf { it.length() > 0 }
         return clips?.let { (0 until it.length()).mapNotNull { index -> it.getJSONObject(index).let { c ->
             val asset = c.getString("asset")
             if (actor.optBoolean("savedOnPhone")) PersonalVoicePacks.file(context, asset)?.let { VoiceClip(c.getString("line"), file = it, caption = c.getString("line")) }
@@ -51,12 +58,10 @@ class VoiceLibrary(private val context: Context) {
             val label = runCatching { File(file.parentFile, "${file.nameWithoutExtension}.txt").readText().take(80) }.getOrDefault("Custom recording")
             VoiceClip(label, file = file, caption = metadata(file)?.optString("caption")?.takeIf { it.isNotBlank() })
         }
-    // Before clearing had its own slot, it used the user's leaving recordings.
-    // Keep those working until they add a dedicated clearing recording.
+    // A recording belongs only to its chosen situation. Preserve old files without
+    // assuming a leaving-app performance also describes swiping a notification.
     fun customForReaction(kind: RoastKind, style: TeasingStyle = preferences.teasingStyle): List<VoiceClip> =
-        custom(kind, style).ifEmpty {
-            if (kind == RoastKind.NOTIFICATION_CLEARED) custom(RoastKind.ABANDON, style) else emptyList()
-        }
+        custom(kind, style)
     fun available(kind: RoastKind, style: TeasingStyle = preferences.teasingStyle): List<VoiceClip> =
         (if (preferences.customVoice) customForReaction(kind, style) else emptyList()).ifEmpty { bundled(kind, style) }
             .distinctBy { it.asset ?: it.file?.absolutePath }
@@ -67,10 +72,13 @@ class VoiceLibrary(private val context: Context) {
         val source = if (custom.isNotEmpty()) "custom" else preferences.actorFor(style)
         return VoiceRotation(context).choose("${style.name}.$source.${kind.name}", style, clips)
     }
-    fun reaction(kind: RoastKind, style: TeasingStyle = preferences.teasingStyle): VoiceReaction {
-        val clip = choose(kind, style)
-        val reason = if (clip == null && !preferences.customVoice && customForReaction(kind, style).isNotEmpty())
-            "Text only · turn on Use my recordings in Voice settings to hear your saved clip." else null
+    fun reaction(kind: RoastKind, style: TeasingStyle = preferences.teasingStyle, allowCustom: Boolean = preferences.customVoice): VoiceReaction {
+        val clip = choose(kind, style, allowCustom)
+        val reason = when {
+            clip != null -> null
+            !allowCustom && customForReaction(kind, style).isNotEmpty() -> "Text only · turn on Use my recordings in Voice settings to hear your saved clip."
+            else -> "Text only · no ${style.label} recording for ${kind.displayName().lowercase()}. Choose a pack covering this situation or add a recording."
+        }
         return VoiceReaction(kind, style, clip?.caption ?: clip?.let { "Recording: ${it.label}" } ?: Roasts.pick(kind, style), clip, reason)
     }
     fun importAudio(kind: RoastKind, uri: Uri, label: String, style: TeasingStyle = preferences.teasingStyle): VoiceClip =
@@ -136,6 +144,9 @@ class VoiceLibrary(private val context: Context) {
         Unit
     }
     companion object {
+        internal val catalogRevision = java.util.concurrent.atomic.AtomicLong()
+        internal val SHORT_REACTION_ACTORS = setOf("alex", "sean", "meghan", "high_on_life")
+        internal val SHORT_REACTION_KINDS = setOf(RoastKind.CREATED, RoastKind.STARTED, RoastKind.COMPLETED)
         const val MAX_CLIP_BYTES = 5 * 1024 * 1024
         const val MAX_TOTAL_BYTES = 20 * 1024 * 1024
         internal val storageLock = Any()
@@ -178,6 +189,10 @@ fun RoastKind.displayName(): String = when (this) {
     RoastKind.COMPLETED_LATE -> "Overdue task completed"
     RoastKind.PLAN_DAY -> "An empty day"
     RoastKind.NOTIFICATION_CLEARED -> "Notification cleared"
+    RoastKind.STILL_WORKING -> "Started but unfinished"
+    RoastKind.LOW_PRIORITY -> "Only low-priority tasks"
+    RoastKind.SMALL_LIST -> "A small task list"
+    RoastKind.NOTIFICATION_OPENED -> "Notification opened"
 }
 
 fun RoastKind.triggerDescription(): String = when (this) {
@@ -186,11 +201,15 @@ fun RoastKind.triggerDescription(): String = when (this) {
     RoastKind.COMPLETED -> "When you check a task off."
     RoastKind.SNOOZE -> "When you move a task to Tomorrow."
     RoastKind.OVERDUE -> "When a deadline passes, in Today or a spoken reminder."
-    RoastKind.IDLE -> "Idle in Today, unfinished work, small lists, or low-priority-only days while away."
+    RoastKind.IDLE -> "Idle in Today, or no task progress while away."
     RoastKind.TINY -> "For overdue or idle tasks estimated under five minutes."
     RoastKind.ABANDON -> "After leaving without progress, or when you return."
     RoastKind.SNOOZE_REPEAT -> "When you postpone the same task for the third time or more."
     RoastKind.COMPLETED_LATE -> "When you finish a task after its deadline."
     RoastKind.PLAN_DAY -> "The daily planning prompt, or repeated empty-list nudges at your chosen gap."
     RoastKind.NOTIFICATION_CLEARED -> "When you swipe away a Bite reminder or use Clear all. One reaction; tasks stay unchanged."
+    RoastKind.STILL_WORKING -> "A started task remains unfinished past its estimate and your nudge gap."
+    RoastKind.LOW_PRIORITY -> "All tasks due today or earlier are low priority, with no recent progress."
+    RoastKind.SMALL_LIST -> "One to three tasks remain, with no recent progress."
+    RoastKind.NOTIFICATION_OPENED -> "When you tap a reminder. Opening it does not start or finish a task."
 }

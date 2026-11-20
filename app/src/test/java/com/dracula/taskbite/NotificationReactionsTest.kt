@@ -24,6 +24,7 @@ class NotificationReactionsTest {
         p.apply { onboarded = true; reminders = true; quietEnabled = false; notificationReactions = true; backgroundVoice = true }
         shadowOf(app).grantPermissions(Manifest.permission.POST_NOTIFICATIONS)
         ShadowToast.reset()
+        installTestVoicePack(app)
     }
     private suspend fun post(now: Long, title: String = "Still waiting"): Pair<Task, BiteNotice> {
         val task = Task(title = title, dueAt = now + 3_600_000, updatedAt = now - 60_000)
@@ -53,8 +54,8 @@ class NotificationReactionsTest {
         val (task, n) = post(now)
         ReminderAudio.enqueue(app, VoiceLibrary(app).reaction(RoastKind.OVERDUE), n.token, now = now)
         val reaction = requireNotNull(NotificationReactions.opened(app, n.token, now + 1_000))
-        assertEquals(RoastKind.STARTED, reaction.kind)
-        assertTrue(VoiceLibrary(app).bundled(RoastKind.STARTED).any { it.caption == reaction.caption && it.asset == reaction.clip?.asset })
+        assertEquals(RoastKind.NOTIFICATION_OPENED, reaction.kind)
+        assertTrue(VoiceLibrary(app).bundled(RoastKind.NOTIFICATION_OPENED).any { it.caption == reaction.caption && it.asset == reaction.clip?.asset })
         assertNull(ReminderAudio.peek(app))
         assertNull(NotificationReactions.opened(app, n.token, now + 2_000))
         assertNull(NotificationReactions.dismissed(app, n.token, now + 2_000))
@@ -115,7 +116,7 @@ class NotificationReactionsTest {
         NotificationReactions.opened(app, notice.token, now + 48 * 60_000)
         assertNull(NotificationReactions.followUp(app, nudge, now + 49 * 60_000))
         val opened = requireNotNull(NotificationReactions.followUp(app, nudge, now + 95 * 60_000))
-        assertTrue(opened.first.startsWith("Opened, still waiting:")); assertEquals(RoastKind.ABANDON, opened.second)
+        assertTrue(opened.first.startsWith("Opened, still waiting:")); assertEquals(RoastKind.IDLE, opened.second)
         p.lastTaskActivity = now + 94 * 60_000
         assertNull(NotificationReactions.followUp(app, nudge, now + 95 * 60_000))
     }
@@ -149,7 +150,7 @@ class NotificationReactionsTest {
         val (_, n) = post(now)
         val reaction = requireNotNull(NotificationReactions.opened(app, n.token, now + 1_000))
         assertNull(reaction.clip)
-        assertTrue(reaction.caption in Roasts.options(RoastKind.STARTED, TeasingStyle.SWEET))
+        assertTrue(reaction.caption in Roasts.options(RoastKind.NOTIFICATION_OPENED, TeasingStyle.SWEET))
         val (_, second) = post(now)
         assertNull(NotificationReactions.dismissed(app, second.token, now + 2_000))
         assertTrue(DeliveryStatus.report(app).any { it.contains("recording", ignoreCase = true) })

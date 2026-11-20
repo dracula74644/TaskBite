@@ -2,7 +2,7 @@
 
 An Android task manager with a sarcastic, friendly sidekick. Made by Zeeshan Mirza (Dracula).
 
-This is a separate project from `../QuickMsg`. Android 8.0+ (API 26), Kotlin, Jetpack Compose, Room, WorkManager, and Glance. The current release uses application ID `com.dracula.taskbite`, version code `20`, version `1.19`.
+This is a separate project from `../QuickMsg`. Android 8.0+ (API 26), Kotlin, Jetpack Compose, Room, WorkManager, and Glance. The current release uses application ID `com.dracula.taskbite`, version code `21`, version `1.20`.
 
 ## What works
 
@@ -13,7 +13,7 @@ This is a separate project from `../QuickMsg`. Android 8.0+ (API 26), Kotlin, Je
 - Month calendar with task indicators and daily agenda. Export individual tasks to the phone's calendar through its event editor. The user saves the event; this is not two-way calendar synchronization.
 - Persistent action history, including completed and archived tasks; explicit deletion removes the selected task and its history.
 - Original short roasts for overdue tasks, postponing, app abandonment, inactivity, and tiny tasks; encouragement for starting and finishing.
-- Optional human voice reactions, spoken due reminders, quiet hours, and notification actions. Three licensed actors plus recording/import for your own roast lines. No text-to-speech engine.
+- Optional human voice reactions, spoken due reminders, quiet hours, and notification actions. Two preloaded meme packs, three licensed short-reaction actors, and recording/import for your own roast lines. No text-to-speech engine.
 - Resizable, scrollable home-screen widgets with today's tasks, direct completion, pending/overdue counts, quick-add, and voice entry.
 - Complete backup export/import for tasks, history, settings, custom recordings, and saved personal packs. Task-only JSON exports remain supported. Task merges are atomic, deduplicate IDs, and keep newer local edits.
 - A local release signing key, excluded from source control, to keep future APKs installable over this release.
@@ -38,7 +38,7 @@ Quiet hours default to 22:00–08:00 in the phone's timezone; you can change the
 
 **Widgets & backups → Back up everything** creates a `.bitebackup` ZIP with tasks, history, deletion markers, portable settings, custom recordings and saved personal packs. It verifies per-file checksums, paths, size limits, metadata and audio before restoration. Existing recordings are kept and duplicate audio is skipped; a merge that exceeds five recordings per situation/style or the 20 MB custom-voice limit is rejected before tasks are merged. Task merges keep newer local edits and saved deletions. Settings replacement has its own confirmation checkbox. Android permissions, pending notifications, delivery timestamps, temporary pauses and cached updates are not imported. Backup files contain private recordings and should be stored privately. Complete archives are limited to 36 MB compressed / 32 MB expanded; task JSON remains limited to 10 MB. The separate **Export tasks & history** produces JSON without recordings or preferences.
 
-**Voice settings** guides you through four recordings for each of 12 situations, with separate Classic and Sweet progress. The files under `voice-pack/` contain **96 scripts, not 96 new recordings**. Record/import real performances to complete the pack; Bite never synthesizes a missing voice or replaces a Sweet line with Classic audio. The existing human voices continue to work.
+**Voice settings** guides you through four recordings for each of 16 situations, with separate Classic and Sweet progress. The files under `voice-pack/` contain **128 scripts, not 128 new recordings**. Record/import real performances to complete the pack; Bite never synthesizes a missing voice or replaces a Sweet line with Classic audio. The existing human voices continue to work.
 
 Personal builds save their installed optional packs into private app storage on first launch. Install and open the personal 1.19 APK once to preserve those packs before subsequent public-only updates. Public builds never upload or distribute those local packs. Complete backups and Android backup/device transfer include saved packs.
 
@@ -168,7 +168,7 @@ The prompt can appear on Today, or as a notification with **Add a task** that op
 
 For your own voice on your girlfriend's app, select Sweet teasing, open **Voice settings**, choose a situation, and record the suggested line on her phone—or import an audio recording you have supplied. For affectionate teasing aimed at you, use the same mode on your phone and import/record the performances you want to hear. Saved clips override their individual categories and style when **Use my recordings** is enabled. **An empty day** has its own recording slot; Classic can use its actor's greeting, while Sweet waits for its own recording.
 
-`voice-pack/sweet-recording-script.txt` and `.json` contain 22 full-sentence human-recording prompts, two per situation. They are scripts, not newly performed audio. `python3 tools/prepare_original_voice_pack.py /path/to/recordings --performer "Name" --style sweet` bundles supplied WAV performances as **Bite Sweet** in the ignored personal overlay. The classic script now also has 22 lines, including the empty-day reaction. Both pack routes require real input recordings.
+`voice-pack/sweet-recording-script.txt` and `.json` contain 64 full-sentence human-recording prompts, four per situation. They are scripts, not newly performed audio. `python3 tools/prepare_original_voice_pack.py /path/to/recordings --performer "Name" --style sweet` bundles supplied WAV performances as **Bite Sweet** in the ignored personal overlay. The classic script also has 64 lines, including the empty-day reaction. Both pack routes require real input recordings.
 
 ## Recurrence, context, and Quick Undo in 1.6
 
@@ -178,7 +178,7 @@ In-app completion, postponement, and confirmed deletion offer a **10-second Undo
 
 Bite now distinguishes the third and later postponements of the same task, and completing an overdue task. Each has its own written lines and recording category. Existing human packs fall back to their postponement/completion clips until a dedicated recording is supplied.
 
-The full original human pack is **prepared for recording, not recorded yet**. `voice-pack/recording-script.txt` and `.json` now contain 22 original lines across 11 situations. Start with the [three-line audition brief](voice-pack/audition-brief.txt) to choose one consistent human performance before recording the full pack. Voice settings shows which situations have custom recordings and offers **Next missing situation**. Record/import a whole sentence for each situation. To bundle externally recorded performances, run `python3 tools/prepare_original_voice_pack.py /path/to/recordings --performer "Performer name"`; all 22 files must exist. The tool validates and normalizes real input files, creates no speech, and places the personal pack in the ignored overlay. After rebuilding, **Bite Originals** appears as a voice choice. Existing real recordings remain available throughout.
+The full original human pack is **prepared for recording, not recorded yet**. `voice-pack/recording-script.txt` and `.json` now contain 64 original lines across 16 situations. Start with the [three-line audition brief](voice-pack/audition-brief.txt) to choose one consistent human performance before recording the full pack. Voice settings shows which situations have custom recordings and offers **Next missing situation**. Record/import a whole sentence for each situation. To bundle externally recorded performances, run `python3 tools/prepare_original_voice_pack.py /path/to/recordings --performer "Performer name"`; all 64 files must exist. The tool validates and normalizes real input files, creates no speech, and places the personal pack in the ignored overlay. After rebuilding, **Bite Originals** appears as a voice choice. Existing real recordings remain available throughout.
 
 Database version 3 adds recurrence and snooze context through a non-destructive 2→3 migration; 1→2→3 is supported. JSON backup version 3 includes these fields and reads older v1/v2 backups with non-repeating defaults. UI concepts under `design/concepts/` are proposals; no candidate redesign has been applied.
 
@@ -202,13 +202,27 @@ Database version 2 originally added the deletion-marker table through an explici
 
 Voice clips use `USAGE_MEDIA` and `STREAM_MUSIC` consistently. Earlier builds checked notification volume but used system-sound audio attributes, and blocked explicit previews in silent/vibrate modes. Tests reproduce muted notification/system channels with audible media, vibrate previews, priority-DND previews, and denied audio focus. Muted app volume, muted media, DND, focus denial, unavailable files, decoding failure, and timeout have distinct messages. User-stopped previews produce no error. Automatic reactions retain silent/DND and quiet-hour suppression.
 
-This personal build also includes four High on Life clips from the user-selected [Voicy soundboard](https://www.voicy.network/official-soundboards/games/high-on-life). Select **High on Life** under **Sidekick → Voice settings**. Starting and adding rotate “LEZDUIT!!” with the approving clip; completing rotates “We Did It!” with approval. Empty-list, stalling, postponing, returning/clearing, overdue, and tiny-task reminders rotate “LEZDUIT!!” with the paused-game clip. Each situation has two alternatives, with independent saved cycles. The game option contains strong language. Custom recordings still take precedence when enabled.
+Previously installed High on Life clips remain available for adding, starting, and completing. The paused-game clip and greetings are no longer used for empty-list, overdue, or notification-dismissal situations. Existing custom files remain intact.
 
-Personal audio assets are in the ignored `app/src/personal/assets/` overlay and are included only in local builds where present. Each clip’s source is recorded in the overlay catalog and credits. These game recordings are not covered by the original pack’s CC BY license; no redistribution license is claimed for them. A normal source checkout includes the three CC BY actors and custom recording/import support.
+Personal audio assets are in the ignored `app/src/personal/assets/` overlay and are included only in local builds where present. Each clip’s source is recorded in the overlay catalog and credits. These game recordings are not covered by the original pack’s CC BY license; no redistribution license is claimed for them. A normal source checkout includes the three CC BY actors, the two preloaded meme packs with source credits, and custom recording/import support.
+
+## Situation-matched meme voices (1.20)
+
+Update through **Sidekick → App updates**. APK delivery uses Bite's updater, not GSConnect. Android still asks you to confirm installation.
+
+**Meme Sidekick** (21 distinct existing human dialogue clips) and **Unfiltered Memes** (26; strong language) are preloaded in the APK and work offline immediately. Each covers 16 situations with two to five alternatives per situation. The clean pack is selected once for Classic users of the older short-reaction actors. Select Unfiltered Memes in **Sidekick → Voice settings** for stronger language. Sweet and enabled custom recordings retain their own voices.
+
+Empty-day prompts include “When do we plan to start?” and repeated postponement includes “Yesterday you said tomorrow.” These are curated excerpts, not bespoke task-name speech. Captions quote the selected audio and replay preserves that selection. Unrelated voices never fill missing categories.
+
+Opened reminders, small lists, low-priority days, and started-but-unfinished tasks have dedicated recording slots. Follow-ups preserve the task's current situation: an untouched empty list never switches to an unfinished-task voice. Clearing a notification no longer borrows the user's leaving-app recording. The simulator includes the new cases.
+
+Source pages, excerpt boundaries, expected captions, and source checksums are in `voice-pack/meme-sources.json`. Prepare the preloaded packs using `python3 tools/prepare_meme_voice_packs.py` (curl and ffmpeg required; refuses to overwrite existing packs). Changed source downloads require review. Original performances remain their owners' property; source references do not imply endorsement. Other personal packs, including High on Life, remain excluded from public releases.
+
+The meme clips are mono PCM16 WAV with consistent loudness and play offline through the existing AudioTrack path. They are also retained on the phone and included in complete backups. Physical phone listening/background checks remain in `docs/phone-testing.md`.
 
 ## Human voices and custom roasts
 
-Open **Sidekick → Voice settings**. Choose Alex Brodie, Sean Lenhart, or Meghan Christian and use **Hear voice** to preview the selected reaction category. The included pack contains 48 human reaction edits: short acted phrases, sighs, refusals, and encouragement matched to app actions. Captions show these actual short phrases. This pack does not perform the original longer scripts or dynamic task names. Sweet requires its own recordings.
+Open **Sidekick → Voice settings**. Choose Alex Brodie, Sean Lenhart, or Meghan Christian and use **Hear voice** to preview the selected reaction category. The licensed archive contains 48 human reaction edits. Only adding, starting, and completing are covered by these short-reaction actors; other situations require a matching pack or recording. Captions show these actual short phrases. This pack does not perform the original longer scripts or dynamic task names. Sweet requires its own recordings.
 
 For longer, personal roast lines:
 
@@ -296,7 +310,7 @@ To build the public APK without optional personal assets:
 To prepare a public release with the original signing key kept on this machine:
 
 ```sh
-python3 tools/release.py --notes docs/release-1.19.txt
+python3 tools/release.py --notes docs/release-1.20.txt
 ```
 
 After committing and pushing the tested source to `origin/main`, add `--publish` to publish it. The script requires clean tracked source, refuses existing release/tag versions, checks the public-asset rule, verifies uploads while the release is still a draft, and never uploads signing files. GitHub Actions independently tests/lints public source on pushes and pull requests, and compiles the isolated phone test app. No signing key or write-capable release token is stored in CI.

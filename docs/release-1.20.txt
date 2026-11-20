@@ -1,0 +1,7 @@
+Bite 1.20 — preloaded voices for each situation
+
+Meme Sidekick (21 real dialogue clips) and Unfiltered Memes (26; strong language) are included in the APK. No extra downloads. Both work offline and cover 16 situations with multiple alternatives. Classic users of the older short-reaction voices get Meme Sidekick once; choose Unfiltered Memes in Voice settings for stronger language. Sweet and custom recordings keep their settings.
+
+Empty-day follow-ups keep their planning context. Opening a notification has its own reaction and never claims the task started. Small lists, low-priority tasks, and started-but-unfinished work have separate slots. Voices never fall back to unrelated categories. Each pack shows coverage for the selected situation. The simulator covers the new cases.
+
+No generated speech or task/database migration. Packs remain available across updates and in complete backups. APK delivery uses the built-in updater; Android confirms installation. Source credits are included. Physical phone listening and background delivery checks remain pending.

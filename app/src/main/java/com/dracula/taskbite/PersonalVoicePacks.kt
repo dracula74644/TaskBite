@@ -7,7 +7,19 @@ import java.util.UUID
 
 /** Preserve personal voices on this phone across later public APK updates. */
 object PersonalVoicePacks {
-    val ids = setOf("high_on_life", "bite_original", "bite_sweet")
+    val ids = setOf("high_on_life", "bite_original", "bite_sweet", "meme_sidekick", "meme_unfiltered")
+    /** The update introduces a preloaded meme pack without changing Sweet or custom takes. */
+    fun activateMemesOnce(context: Context) {
+        val prefs = context.getSharedPreferences("taskbite", Context.MODE_PRIVATE)
+        if (prefs.getBoolean("memePackV1", false)) return
+        val installed = context.assets.list("voices/meme_sidekick").orEmpty().contains("catalog.json") ||
+            File(root(context), "meme_sidekick/catalog.json").isFile
+        if (!installed) return
+        val p = Preferences(context)
+        if (p.teasingStyle == TeasingStyle.CLASSIC && p.voiceActor in VoiceLibrary.SHORT_REACTION_ACTORS)
+            p.voiceActor = "meme_sidekick"
+        prefs.edit().putBoolean("memePackV1", true).apply()
+    }
     private fun root(context: Context) = File(context.filesDir, "personal_voice_packs")
     fun file(context: Context, asset: String): File? {
         val parts = asset.split('/')
@@ -74,6 +86,7 @@ object PersonalVoicePacks {
             check(temporary.mkdirs())
             files.forEach { (name, bytes) -> File(temporary, name).writeBytes(bytes) }
             check(temporary.renameTo(destination)) { "Could not save the personal voice pack." }
+            VoiceLibrary.catalogRevision.incrementAndGet()
             destination
         } finally { temporary.deleteRecursively() }
     }

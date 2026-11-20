@@ -103,7 +103,7 @@ class VoiceVolumeTest {
     }
     @Test fun pcmOutputFailureIsNotMisreportedAsADecoderError() = runBlocking {
         ShadowAudioTrack.enableIllegalStateOnPlay(true)
-        assertEquals(VoiceResult.ENGINE_ERROR, Voice(context).play(RoastKind.OVERDUE))
+        assertEquals(VoiceResult.ENGINE_ERROR, Voice(context).play(RoastKind.STARTED))
         assertNull(lastPlayer)
         assertEquals(AudioTrack.STATE_UNINITIALIZED, requireNotNull(lastPcm).state)
     }
@@ -124,7 +124,7 @@ class VoiceVolumeTest {
         prefs.quietEnd = 8
         assertEquals(VoiceResult.QUIET_HOURS, voice.react(RoastKind.SNOOZE))
         assertNull(lastPcm)
-        assertEquals(VoiceResult.PLAYED, voice.play(RoastKind.SNOOZE, preview = true))
+        assertEquals(VoiceResult.PLAYED, voice.play(RoastKind.STARTED, preview = true))
     }
     @Test fun everySweetSituationPlaysItsOwnFileAndCaptionAndMissingClipsStaySilent() = runBlocking {
         val prefs = Preferences(context).apply { teasingStyle = TeasingStyle.SWEET; customVoice = true }

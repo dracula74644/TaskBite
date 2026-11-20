@@ -70,7 +70,7 @@ import kotlinx.coroutines.*
         }
     }
     fun stopPreview() { previewGeneration++; previewJob?.cancel(); voice.stop(); playing = false }
-    fun preview(clip: VoiceClip? = null) {
+    fun preview(clip: VoiceClip? = null, allowCustom: Boolean = preferences.customVoice) {
         stopPreview()
         val token = previewGeneration
         previewJob = scope.launch {
@@ -78,7 +78,7 @@ import kotlinx.coroutines.*
             try {
                 message = null
                 val selected = clip?.let { VoiceReaction(kind, style, it.caption ?: "Recording: ${it.label}", it) }
-                    ?: library.reaction(kind)
+                    ?: library.reaction(kind, allowCustom = allowCustom)
                 previewCaption = selected.caption
                 val result = voice.play(selected, preview = true)
                 if (previewGeneration == token) message = if (result == VoiceResult.NO_RECORDING) selected.explanation
@@ -158,10 +158,6 @@ import kotlinx.coroutines.*
                     1 -> "1 recording for this situation. Add another to vary the voice."
                     else -> "$variantCount recordings for this situation. Bite rotates through them before repeating, even after a restart."
                 }, color = Muted, style = MaterialTheme.typography.bodySmall)
-                if (kind == RoastKind.NOTIFICATION_CLEARED && useCustom && clips.isEmpty() && library.customForReaction(kind, style).isNotEmpty()) {
-                    Text("Using your Leaving without progress recordings. Add a recording here to replace them for clearing notifications.",
-                        color = Muted, style = MaterialTheme.typography.bodySmall)
-                }
             }
             previewCaption?.let { caption -> item { Text(caption, color = Lime, modifier = Modifier.testTag("voice_preview_caption")) } }
             if (message != null || recorder.error != null) item { Text(message ?: recorder.error.orEmpty(), color = Lime) }
@@ -174,15 +170,19 @@ import kotlinx.coroutines.*
                     Column(Modifier.weight(1f)) {
                         Text(option.name)
                         if (option.description.isNotBlank()) Text(option.description, color = Muted, style = MaterialTheme.typography.bodySmall)
+                        val count = library.bundled(kind, style, option.id).size
+                        Text(if (count == 0) "No clip for ${kind.displayName().lowercase()}" else "$count clips for ${kind.displayName().lowercase()}",
+                            color = if (count == 0) Muted else Lime, style = MaterialTheme.typography.bodySmall)
+                        if (option.id in VoiceLibrary.SHORT_REACTION_ACTORS) Text("Short reactions for adding, starting and finishing only.", color = Muted, style = MaterialTheme.typography.bodySmall)
                     }
                     TextButton(enabled = !categoryLocked && !playing, onClick = {
                         actor = option.id; preferences.selectActor(style, actor)
-                        preview(library.choose(kind, allowCustom = false))
+                        preview(allowCustom = false)
                     }) { Text("Hear voice") }
                 }
             }
             item {
-                Text("The caption follows the recording. Task names aren't spoken.", color = Muted, style = MaterialTheme.typography.bodySmall)
+                Text("The caption follows the recording. Missing situations stay text-only; Bite never borrows a different situation's voice. Task names aren't spoken.", color = Muted, style = MaterialTheme.typography.bodySmall)
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text("Use my recordings", Modifier.weight(1f), style = MaterialTheme.typography.titleMedium)
                     Switch(modifier = Modifier.semantics { contentDescription = "Use my recordings" }, checked = useCustom, onCheckedChange = { stopPreview(); useCustom = it; preferences.customVoice = it })
@@ -209,7 +209,7 @@ import kotlinx.coroutines.*
                     label = scripts.nextLine(next, style, library.custom(next, style))
                     message = "${next.displayName()} · recording ${recordingCounts.getValue(next) + 1} of 4"
                 }, modifier = Modifier.heightIn(min = 48.dp)) { Text("Next recording") }
-                else Text("Your 48-recording pack is ready. Bite rotates your saved takes.", color = Lime)
+                else Text("Your ${RoastKind.entries.size * VoiceScripts.TARGET_PER_SITUATION}-recording pack is ready. Bite rotates your saved takes.", color = Lime)
             }
             if (busy) item { LinearProgressIndicator(Modifier.fillMaxWidth()) }
             items(clips, key = { it.file!!.name }) { clip ->
@@ -271,6 +271,10 @@ import kotlinx.coroutines.*
             item {
                 HorizontalDivider()
                 Text("Voice credits", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 14.dp))
+                if (library.actors().any { it.id.startsWith("meme_") }) {
+                    Text("Meme Sidekick and Unfiltered Memes: existing human dialogue from Myinstants, trimmed and volume-normalized. Unfiltered includes strong language. Original performances belong to their respective owners. Captions quote the clips; no generated speech.", color = Muted, style = MaterialTheme.typography.bodySmall)
+                    TextButton(onClick = { links.openUri("https://www.myinstants.com/") }) { Text("Meme clip source") }
+                }
                 Text("Super Dialogue Audio Pack v1 by Dillon Becker. Voices: Alex Brodie, Sean Lenhart, and Meghan Christian. CC BY 4.0. Performances trimmed and joined into action reactions; mono 16-bit PCM WAV. Original voices, no synthesis. No endorsement implied.", color = Muted, style = MaterialTheme.typography.bodySmall)
                 if (library.actors().any { it.id == "high_on_life" }) {
                     Text("High on Life game dialogue: Squanch Games. Clips sourced from Nhaudio32’s Voicy soundboard and converted to 16-bit PCM WAV for this personal build. These game clips are separate from the CC BY pack above.", color = Muted, style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(top = 12.dp))

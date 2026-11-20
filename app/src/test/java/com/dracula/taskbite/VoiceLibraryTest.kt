@@ -21,14 +21,16 @@ class VoiceLibraryTest {
         ShadowMediaMetadataRetriever.addMetadata(file.path, MediaMetadataRetriever.METADATA_KEY_HAS_AUDIO, hasAudio)
         return file
     }
-    @Test fun allActorsHaveRealPackAssetsForEveryCategory() {
+    @Test fun actorsOnlyOfferRealAssetsForTheirCoveredCategories() {
         val library = VoiceLibrary(context)
         assertTrue(library.actors().map { it.id }.containsAll(listOf("alex", "sean", "meghan")))
         for (actor in library.actors()) {
             Preferences(context).voiceActor = actor.id
             for (kind in RoastKind.entries) {
                 val clips = library.bundled(kind)
-                assertTrue(clips.isNotEmpty())
+                if (actor.id in VoiceLibrary.SHORT_REACTION_ACTORS) {
+                    assertEquals(kind in VoiceLibrary.SHORT_REACTION_KINDS, clips.isNotEmpty())
+                } else assertTrue(clips.isNotEmpty())
                 clips.forEach { clip -> context.assets.open(requireNotNull(clip.asset)).use { input ->
                     val pcm = PcmAudio.read(input)
                     assertEquals(44100, pcm.sampleRate)
@@ -46,7 +48,7 @@ class VoiceLibraryTest {
         val clip = library.importFile(RoastKind.SNOOZE, source, "Tomorrow again?")
         source.delete() // Import owns a copy, independent of the picker or original file.
         assertTrue(clip.file!!.isFile)
-        assertNotNull(library.choose(RoastKind.SNOOZE)!!.asset)
+        assertNull(library.choose(RoastKind.SNOOZE))
         Preferences(context).customVoice = true
         val reopened = VoiceLibrary(context)
         assertEquals(clip, reopened.choose(RoastKind.SNOOZE))
@@ -54,25 +56,24 @@ class VoiceLibraryTest {
         assertEquals("Tomorrow again?", reopened.custom(RoastKind.SNOOZE).single().label)
         reopened.remove(clip)
         assertFalse(clip.file.exists())
-        assertNotNull(reopened.choose(RoastKind.SNOOZE)!!.asset)
+        assertNull(reopened.choose(RoastKind.SNOOZE))
     }
-    @Test fun clearingPreservesLegacyCustomClipsUntilItsOwnStyleSpecificRecordingIsAdded() {
+    @Test fun clearingNeverBorrowsLeavingAudioButPreservesTheOriginalRecording() {
         val library = VoiceLibrary(context)
         val prefs = Preferences(context)
         for (style in TeasingStyle.entries) {
             prefs.teasingStyle = style
             prefs.customVoice = true
             val legacy = library.importFile(RoastKind.ABANDON, recording(), "My leaving recording", style, "Come back soon.")
-            assertEquals(legacy, library.choose(RoastKind.NOTIFICATION_CLEARED))
+            assertNull(library.choose(RoastKind.NOTIFICATION_CLEARED))
             val own = library.importFile(RoastKind.NOTIFICATION_CLEARED, recording(), "My clearing recording", style, "Nice swipe.")
             assertEquals(own, library.choose(RoastKind.NOTIFICATION_CLEARED))
             assertEquals(legacy, library.choose(RoastKind.ABANDON))
             assertTrue(legacy.file!!.isFile)
             library.remove(own)
-            assertEquals(legacy, VoiceLibrary(context).choose(RoastKind.NOTIFICATION_CLEARED))
+            assertNull(VoiceLibrary(context).choose(RoastKind.NOTIFICATION_CLEARED))
             prefs.customVoice = false
-            if (style == TeasingStyle.SWEET) assertNull(library.choose(RoastKind.NOTIFICATION_CLEARED))
-            else assertNotNull(library.choose(RoastKind.NOTIFICATION_CLEARED)!!.asset)
+            assertNull(library.choose(RoastKind.NOTIFICATION_CLEARED))
         }
     }
     @Test fun invalidAndOversizedAudioDoNotReplaceSavedRecordings() {
@@ -97,14 +98,15 @@ class VoiceLibraryTest {
         assertNull(library.choose(RoastKind.CREATED))
         assertEquals(words, library.reaction(RoastKind.PLAN_DAY).caption)
         Preferences(context).teasingStyle = TeasingStyle.CLASSIC
-        assertNotNull(library.choose(RoastKind.PLAN_DAY)!!.asset)
+        assertNull(library.choose(RoastKind.PLAN_DAY))
         assertTrue(library.custom(RoastKind.PLAN_DAY).isEmpty())
     }
     @Test fun selectionKeepsCaptionAndClipTogetherAcrossReplayRecreationAndActorChanges() {
         val library = VoiceLibrary(context)
         for (kind in RoastKind.entries) {
             val reaction = library.reaction(kind)
-            assertEquals(reaction.clip!!.caption, reaction.caption)
+            if (reaction.clip != null) assertEquals(reaction.clip.caption, reaction.caption)
+            else assertTrue(reaction.caption in Roasts.options(kind))
             val saved = reaction.saved()
             library.choose(kind) // A different reaction must not mutate the saved selection.
             Preferences(context).voiceActor = "meghan"

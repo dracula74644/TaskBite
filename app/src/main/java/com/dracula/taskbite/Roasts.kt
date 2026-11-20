@@ -1,11 +1,16 @@
 package com.dracula.taskbite
 
-enum class RoastKind { OVERDUE, SNOOZE, ABANDON, IDLE, TINY, CREATED, COMPLETED, STARTED, SNOOZE_REPEAT, COMPLETED_LATE, PLAN_DAY, NOTIFICATION_CLEARED }
+enum class RoastKind { OVERDUE, SNOOZE, ABANDON, IDLE, TINY, CREATED, COMPLETED, STARTED, SNOOZE_REPEAT, COMPLETED_LATE, PLAN_DAY, NOTIFICATION_CLEARED,
+    STILL_WORKING, LOW_PRIORITY, SMALL_LIST, NOTIFICATION_OPENED }
 
 enum class TeasingStyle(val label: String) { CLASSIC("Classic"), SWEET("Sweet teasing") }
 
 object Roasts {
     val lines = mapOf(
+        RoastKind.STILL_WORKING to listOf("Still working? Your task is awaiting the season finale.", "Started is lovely. Finished would really steal the show."),
+        RoastKind.LOW_PRIORITY to listOf("Everything low priority? Your list is unusually relaxed.", "A very chill list. Let's give something a turn."),
+        RoastKind.SMALL_LIST to listOf("Short list. Plenty of room for a little progress.", "A small cast of tasks. Give one its moment."),
+        RoastKind.NOTIFICATION_OPENED to listOf("You opened the reminder. The task awaits its turn.", "Attention acquired. A checkbox would make this a sequel."),
         RoastKind.NOTIFICATION_CLEARED to listOf(
             "Nice swipe. Your plans didn't move.",
             "Notification gone. Procrastination remains undefeated.",
@@ -86,6 +91,10 @@ object Roasts {
         ),
     )
     val sweetLines = mapOf(
+        RoastKind.STILL_WORKING to listOf("Still working, babe? I'm cheering for your little finish.", "Started looks cute. Finished would look even cuter."),
+        RoastKind.LOW_PRIORITY to listOf("A gentle list, sweetheart. Pick one little win.", "Low pressure, babe. Your first little step awaits."),
+        RoastKind.SMALL_LIST to listOf("A few little tasks, cutie. Let's give one attention.", "Small list, sweetheart. Plenty of room for a victory."),
+        RoastKind.NOTIFICATION_OPENED to listOf("You noticed me, babe. Your task would love that too.", "Hey, cutie. One little step while you're here?"),
         RoastKind.NOTIFICATION_CLEARED to listOf(
             "Babe, smooth swipe. One little task next?",
             "Cute dodge, sweetheart. Your plans are still waiting.",
@@ -118,14 +127,6 @@ object Roasts {
         kind == RoastKind.COMPLETED && task.dueAt < now -> RoastKind.COMPLETED_LATE
         else -> kind
     }
-}
-
-fun RoastKind.baseKind(): RoastKind = when (this) {
-    RoastKind.SNOOZE_REPEAT -> RoastKind.SNOOZE
-    RoastKind.COMPLETED_LATE -> RoastKind.COMPLETED
-    RoastKind.PLAN_DAY -> RoastKind.ABANDON
-    RoastKind.NOTIFICATION_CLEARED -> RoastKind.ABANDON
-    else -> this
 }
 
 object ReminderPolicy {

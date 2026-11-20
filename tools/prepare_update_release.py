@@ -39,7 +39,9 @@ def prepare(apk, output, sdk, notes="", public=False):
         personal_root = ROOT / "app/src/personal/assets"
         personal_paths = {"assets/" + p.relative_to(personal_root).as_posix()
                           for p in personal_root.rglob("*") if p.is_file()}
-        personal = any(n in personal_paths or n.startswith("assets/voices/high_on_life/") for n in archive.namelist())
+        personal_prefixes = tuple("assets/voices/" + name + "/" for name in
+                                  ("high_on_life", "bite_original", "bite_sweet"))
+        personal = any(n in personal_paths or n.startswith(personal_prefixes) for n in archive.namelist())
     if public and personal:
         raise ValueError("This APK contains the personal voice pack. Its CREDITS.txt excludes redistribution; prepare a public build with distributable assets first.")
     size = apk.stat().st_size

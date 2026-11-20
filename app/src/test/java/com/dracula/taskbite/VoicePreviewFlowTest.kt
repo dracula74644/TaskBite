@@ -40,6 +40,8 @@ class VoicePreviewFlowTest {
         compose.onNodeWithText(" Test voice").performScrollTo().assertIsDisplayed().performClick()
         compose.waitUntil(5000) { plays == 1 }
         compose.onNodeWithText("Voice settings").performScrollTo().assertIsDisplayed().performClick()
+        compose.onNodeWithText("Task overdue").performClick()
+        compose.onNodeWithText("Task completed").performClick()
         compose.onNodeWithTag("voice_library").performScrollToNode(hasText("Alex Brodie"))
         compose.onAllNodesWithText("Hear voice").onFirst().performScrollTo().performClick()
         compose.waitUntil(5000) { plays == 2 }

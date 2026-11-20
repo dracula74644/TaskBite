@@ -30,7 +30,8 @@ class VoiceConsistencyFlowTest {
     private val app get() = compose.activity.application as TaskBiteApp
     private fun setup() {
         compose.onNodeWithText("Let's get something done").performScrollTo().performClick()
-        app.preferences.apply { planningNudge = false; actionVoice = true; quietEnabled = false; voiceActor = "sean"; reminders = true; backgroundVoice = true }
+        app.preferences.apply { planningNudge = false; actionVoice = true; quietEnabled = false; reminders = true; backgroundVoice = true }
+        installTestVoicePack(app)
         val audio = app.getSystemService(AudioManager::class.java)
         audio.ringerMode = AudioManager.RINGER_MODE_NORMAL
         audio.setStreamVolume(AudioManager.STREAM_MUSIC, 5, 0)
@@ -94,7 +95,7 @@ class VoiceConsistencyFlowTest {
         backgroundReminder()
         assertEquals(1, hashes.size)
         val clip = VoiceLibrary(app).bundled(RoastKind.OVERDUE).single {
-            app.assets.open(it.asset!!).use(PcmAudio::read).samples.contentHashCode() == hashes.single()
+            it.pcm(app).samples.contentHashCode() == hashes.single()
         }
         val manager = app.getSystemService(NotificationManager::class.java)
         val notification = manager.activeNotifications.single { it.tag == task.id }.notification
@@ -172,7 +173,7 @@ class VoiceConsistencyFlowTest {
             backgroundReminder(now = if (scenario == AwayScenario.LEFT_WITHOUT_PROGRESS) at(9, 30) else at(11))
             assertEquals("${scenario.name} must play once", 1, hashes.size)
             val clip = VoiceLibrary(app).bundled(scenario.kind).single {
-                app.assets.open(it.asset!!).use(PcmAudio::read).samples.contentHashCode() == hashes.single()
+                it.pcm(app).samples.contentHashCode() == hashes.single()
             }
             val notice = manager.activeNotifications.single { it.tag == "away_task" }.notification
             assertEquals(scenario.title(item, count), notice.extras.getString(Notification.EXTRA_TITLE))

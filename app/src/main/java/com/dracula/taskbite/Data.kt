@@ -356,6 +356,7 @@ class TaskBiteApp : Application(), androidx.work.Configuration.Provider {
     @Volatile var foreground = false
     override fun onCreate() {
         super.onCreate()
+        PersonalVoicePacks.activateMemesOnce(this)
         Reminders.createChannel(this)
         Reminders.start(this)
         AppUpdates.start(this)

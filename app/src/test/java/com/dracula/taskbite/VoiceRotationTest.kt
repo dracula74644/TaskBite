@@ -56,37 +56,21 @@ class VoiceRotationTest {
         val own = VoiceClip("Your recording", asset = "only.wav")
         repeat(5) { assertEquals(own, VoiceRotation(context).choose("own", TeasingStyle.SWEET, listOf(own))) }
     }
-    @Test fun catalogOffersMultipleRealClipsWithoutChangingCaptionOrSelectedActor() {
+    @Test fun shortPacksRotateOnlyAppropriateActionsWithoutChangingActor() {
         val p = Preferences(context)
-        for (actor in listOf("sean", "alex", "meghan")) {
-            p.voiceActor = actor
-            for (kind in listOf(RoastKind.PLAN_DAY, RoastKind.IDLE, RoastKind.ABANDON)) {
-                assertEquals(5, VoiceLibrary(context).available(kind).size)
-                val reactions = (1..5).map { VoiceLibrary(context).reaction(kind) }
-                assertEquals(5, reactions.map { it.clip!!.asset }.toSet().size)
-                reactions.forEach {
-                    assertEquals(it.caption, it.clip!!.caption)
-                    assertFalse(it.caption.contains("welcome", ignoreCase = true))
-                    assertFalse(it.caption.contains("hello", ignoreCase = true))
-                    assertFalse(it.caption.contains("good luck", ignoreCase = true))
-                }
-                assertEquals(actor, p.voiceActor)
+        for (actor in VoiceLibrary(context).actors().filter { it.id in VoiceLibrary.SHORT_REACTION_ACTORS }) {
+            p.voiceActor = actor.id
+            for (kind in VoiceLibrary.SHORT_REACTION_KINDS) {
+                val pool = VoiceLibrary(context).available(kind)
+                val reactions = (1..pool.size).map { VoiceLibrary(context).reaction(kind) }
+                assertEquals(pool.size, reactions.map { it.clip!!.asset }.toSet().size)
+                reactions.forEach { assertEquals(it.caption, it.clip!!.caption) }
             }
-            val clears = (1..6).map { VoiceLibrary(context).reaction(RoastKind.NOTIFICATION_CLEARED) }
-            assertEquals(2, clears.map { it.clip!!.asset }.toSet().size)
-            clears.zipWithNext().forEach { (a, b) -> assertNotEquals(a.clip, b.clip) }
-            assertTrue(clears.all { it.caption in listOf("[Sigh] No way.", "Not happening. Let’s go!") })
-        }
-        if (VoiceLibrary(context).actors().any { it.id == "high_on_life" }) {
-            p.voiceActor = "high_on_life"
-            RoastKind.entries.forEach { kind ->
-                val first = VoiceLibrary(context).reaction(kind)
-                val second = VoiceLibrary(context).reaction(kind)
-                assertNotEquals(first.clip!!.asset, second.clip!!.asset)
-                assertEquals(first.caption, first.clip.caption)
-                assertTrue(first.clip.asset!!.contains("high_on_life"))
+            for (kind in RoastKind.entries - VoiceLibrary.SHORT_REACTION_KINDS) {
+                assertTrue(VoiceLibrary(context).available(kind).isEmpty())
+                assertNull(VoiceLibrary(context).reaction(kind).clip)
             }
-            assertEquals("high_on_life", p.voiceActor)
+            assertEquals(actor.id, p.voiceActor)
         }
     }
 }

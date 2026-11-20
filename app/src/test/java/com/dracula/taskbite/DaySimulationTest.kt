@@ -27,7 +27,7 @@ class DaySimulationTest {
             simulation.log.mapNotNullTo(kinds) { it.kind }
             if (DaySimulation.scenes[index].action in listOf("widget", "quiet", "recurring")) assertFalse("Silent scene $index", simulation.event.audible)
         }
-        assertEquals(RoastKind.entries.toSet(), kinds)
+        assertEquals(RoastKind.entries.toSet() - setOf(RoastKind.STILL_WORKING, RoastKind.LOW_PRIORITY, RoastKind.SMALL_LIST), kinds)
         assertTrue(simulation.finished)
         assertEquals(time(9, nextDay = true), simulation.now)
         assertTrue(simulation.clockFinished)

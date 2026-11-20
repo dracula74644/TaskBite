@@ -171,14 +171,14 @@ class DaySimulation(val date: LocalDate, val zone: ZoneId = ZoneId.systemDefault
     private fun preset(name: String) {
         now = at("09:00"); foreground = false; awaySince = now; standalone = true
         plannedDay = date // Focus this preview on repeated away nudges, not the daily planning prompt.
-        tasks = if (name == "empty") emptyList() else (1..3).map { index ->
+        tasks = if (name == "empty") emptyList() else (1..if (name == "started") 1 else 3).map { index ->
             Task(id = "preset-$index", title = listOf("Read ten pages", "Tidy the desk", "Plan dinner")[index - 1],
                 dueAt = at("18:00"), priority = if (name == "low") 0 else 1, minutes = 15,
-                createdAt = now, updatedAt = now)
+                createdAt = now, updatedAt = now, startedAt = if (name == "started") now else null)
         }
         if (tasks.isNotEmpty()) { lastActivity = now; activeDay = date }
         history = emptyList()
-        emit(when (name) { "empty" -> "An empty list"; "low" -> "Only low-priority tasks"; else -> "Just three tasks" },
+        emit(when (name) { "empty" -> "An empty list"; "low" -> "Only low-priority tasks"; "started" -> "Started but unfinished"; else -> "Just three tasks" },
             "Sample app is away. Advance $gapMinutes minutes to get the first check-in; keep advancing to hear more. No real tasks change.")
     }
     fun advance(millis: Long) {
@@ -217,6 +217,7 @@ class DaySimulation(val date: LocalDate, val zone: ZoneId = ZoneId.systemDefault
             "resume" -> { returnToApp(); complete("quick") }
             "recurring" -> emit("Check-ins keep going", "There is no daily cap. Your $gapMinutes-minute gap and quiet hours control the pace.")
             "clear_notice" -> emit("Notification cleared", "One clearing reaction plays. Tasks, history, and the next nudge time stay unchanged.", RoastKind.NOTIFICATION_CLEARED)
+            "open_notice" -> emit("Notification opened", "Opening a reminder gets attention; it does not start or finish the task.", RoastKind.NOTIFICATION_OPENED)
         }
     }
     companion object {
@@ -253,6 +254,7 @@ class DaySimulation(val date: LocalDate, val zone: ZoneId = ZoneId.systemDefault
             SimulationScene("15:20", "Leave after progress", "leave"),
             SimulationScene("17:20", "Repeated away check-ins", "recurring"),
             SimulationScene("17:21", "Clear a notification", "clear_notice"),
+            SimulationScene("17:22", "Open a notification", "open_notice"),
             SimulationScene("22:00", "Quiet hours", "quiet"),
             SimulationScene("33:00", "The next morning", "morning"),
         )

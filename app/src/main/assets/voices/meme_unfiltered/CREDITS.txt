@@ -1,0 +1,31 @@
+Unfiltered Memes
+Preloaded short dialogue excerpts requested by the user.
+Existing performances, trimmed to complete phrases and normalized to PCM16 mono. No generated speech.
+Original performances remain their owners' property. Source references are listed below; no endorsement is implied.
+
+about_time.wav | https://www.myinstants.com/en/instant/lebron-about-damn-time-6916/ | excerpt 0.9–2.43 seconds
+again.wav | https://www.myinstants.com/en/instant/ah-shit-here-we-go-again-cj-28334/ | excerpt 0–3.11 seconds
+another_one.wav | https://www.myinstants.com/en/instant/dj-khaled-another-one/ | excerpt 0–0.87 seconds
+any_day.wav | https://www.myinstants.com/en/instant/any-f-day-now-58563/ | excerpt 0–1.65 seconds
+come_back.wav | https://www.myinstants.com/en/instant/come-back-here-stop-28500/ | excerpt 0–1.47 seconds
+did_it.wav | https://www.myinstants.com/en/instant/you-did-it-69927/ | excerpt 0–1.22 seconds
+do_it.wav | https://www.myinstants.com/en/instant/just-do-it/ | excerpt 0–4.15 seconds
+do_something.wav | https://www.myinstants.com/en/instant/do-something-87022/ | excerpt 0–1.44 seconds
+easy.wav | https://www.myinstants.com/en/instant/easy-peasy-lemon-squeezy-csgo-73385/ | excerpt 0–2.85 seconds
+finally.wav | https://www.myinstants.com/en/instant/finally-6013/ | excerpt 1.72–3.3 seconds
+get_on.wav | https://www.myinstants.com/en/instant/get-on-with-it/ | excerpt 0–1.08 seconds
+get_together.wav | https://www.myinstants.com/de/instant/get-your-shit-together-57589/ | excerpt 2.84–4.65 seconds
+hello.wav | https://www.myinstants.com/en/instant/hello-there-obi-wan-39670/ | excerpt 0–0.82 seconds
+hurry_mario.wav | https://www.myinstants.com/en/instant/mario-hurry-up-already-sfx-42414/ | excerpt 0–3.53 seconds
+ignore.wav | https://www.myinstants.com/en/instant/stop-ignoring-me-44631/ | excerpt 0–2.92 seconds
+is_that_all.wav | https://www.myinstants.com/en/instant/wesker-is-that-all/ | excerpt 1.02–2.73 seconds
+no_tomorrow.wav | https://www.myinstants.com/en/instant/there-is-no-tomorrow-25353/ | excerpt 6.04–8.05 seconds
+plan.wav | https://www.myinstants.com/en/instant/this-is-the-greatest-plan-38860/ | excerpt 1.85–4.9 seconds
+plan_start.wav | https://www.myinstants.com/en/instant/when-do-we-plan-to-start-79068/ | excerpt 0–2.06 seconds
+still_working.wav | https://www.myinstants.com/en/instant/we-are-not-done-yet-9675/ | excerpt 0–2.25 seconds
+taking_long.wav | https://www.myinstants.com/en/instant/wtf-is-taking-so-long-1440/ | excerpt 0–1.44 seconds
+tomorrow_sure.wav | https://www.myinstants.com/en/instant/tomorrow-for-sure/ | excerpt 0–2.3 seconds
+what_waiting.wav | https://www.myinstants.com/en/instant/the-incredibles-what-are-you-waiting-for-42482/ | excerpt 0–1.35 seconds
+where_going.wav | https://www.myinstants.com/en/instant/where-are-you-going-38802/ | excerpt 0.45–1.78 seconds
+yesterday_tomorrow.wav | https://www.myinstants.com/en/instant/shia-yesterdays-said-tomorrow-/ | excerpt 0–1.8 seconds
+you_late.wav | https://www.myinstants.com/en/instant/youre-late/ | excerpt 0–1.18 seconds

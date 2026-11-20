@@ -1,0 +1,345 @@
+{
+  "source": "Existing human meme/dialogue clips from Myinstants",
+  "actors": [
+    {
+      "id": "meme_unfiltered",
+      "name": "Unfiltered Memes",
+      "style": "CLASSIC",
+      "description": "26 real meme/dialogue clips \u00b7 strong language \u00b7 all 16 situations",
+      "categories": {
+        "PLAN_DAY": [
+          {
+            "asset": "voices/meme_unfiltered/plan_start.wav",
+            "line": "When do we plan to start?",
+            "source": "https://www.myinstants.com/en/instant/when-do-we-plan-to-start-79068/",
+            "sha256": "825458a5fb11c18621a73e4fa3e13eba384187dd8d71b5dd3867c0d7e73d403f"
+          },
+          {
+            "asset": "voices/meme_unfiltered/what_waiting.wav",
+            "line": "What are you waiting for?",
+            "source": "https://www.myinstants.com/en/instant/the-incredibles-what-are-you-waiting-for-42482/",
+            "sha256": "f9a3313ec36fe9f20395adbfabe78c1670afc4965d2478e51fc30ea1b75cee0e"
+          },
+          {
+            "asset": "voices/meme_unfiltered/do_something.wav",
+            "line": "Do something!",
+            "source": "https://www.myinstants.com/en/instant/do-something-87022/",
+            "sha256": "4212160fcef3ebe42602513237e475771c2a26bb88ebc3e8090450599bc6547f"
+          },
+          {
+            "asset": "voices/meme_unfiltered/get_on.wav",
+            "line": "Get on with it!",
+            "source": "https://www.myinstants.com/en/instant/get-on-with-it/",
+            "sha256": "30bf01d013414125e3ccd577812b5c53fb0f847e73ec3251424aa51230ddc98c"
+          },
+          {
+            "asset": "voices/meme_unfiltered/get_together.wav",
+            "line": "Get your shit together, will you?",
+            "source": "https://www.myinstants.com/de/instant/get-your-shit-together-57589/",
+            "sha256": "9ede29da4f812fba732c3172a81049a1586063bef37769d0c64ce87ba3dd5f9a"
+          }
+        ],
+        "OVERDUE": [
+          {
+            "asset": "voices/meme_unfiltered/you_late.wav",
+            "line": "You're late.",
+            "source": "https://www.myinstants.com/en/instant/youre-late/",
+            "sha256": "d093f485a3b5ce7d79006fb986ae7f7da2139f8e6b4bcf8e562b7bad131ee5dc"
+          },
+          {
+            "asset": "voices/meme_unfiltered/hurry_mario.wav",
+            "line": "Hurry up already!",
+            "source": "https://www.myinstants.com/en/instant/mario-hurry-up-already-sfx-42414/",
+            "sha256": "67d499de6563c7ad8185e416612b6175bcf8b7d26bee16d3d0ea8b612bfa133b"
+          },
+          {
+            "asset": "voices/meme_unfiltered/get_on.wav",
+            "line": "Get on with it!",
+            "source": "https://www.myinstants.com/en/instant/get-on-with-it/",
+            "sha256": "30bf01d013414125e3ccd577812b5c53fb0f847e73ec3251424aa51230ddc98c"
+          },
+          {
+            "asset": "voices/meme_unfiltered/any_day.wav",
+            "line": "Any fucking day now.",
+            "source": "https://www.myinstants.com/en/instant/any-f-day-now-58563/",
+            "sha256": "535efa5b6e1890b9c853437e0fae54f5c7b6bccc7b93778d15b69b8f763f43c4"
+          }
+        ],
+        "SNOOZE": [
+          {
+            "asset": "voices/meme_unfiltered/tomorrow_sure.wav",
+            "line": "Tomorrow for sure.",
+            "source": "https://www.myinstants.com/en/instant/tomorrow-for-sure/",
+            "sha256": "e9cd5f5d927a0d5723afb739ba279f638bfdc3ffff5415be4863f773c573ba22"
+          },
+          {
+            "asset": "voices/meme_unfiltered/no_tomorrow.wav",
+            "line": "There is no tomorrow!",
+            "source": "https://www.myinstants.com/en/instant/there-is-no-tomorrow-25353/",
+            "sha256": "f8c3a7cf748fadebd32b4464d30a95a40636e78924a03fd93223c365a94dbf64"
+          }
+        ],
+        "SNOOZE_REPEAT": [
+          {
+            "asset": "voices/meme_unfiltered/yesterday_tomorrow.wav",
+            "line": "Yesterday you said tomorrow.",
+            "source": "https://www.myinstants.com/en/instant/shia-yesterdays-said-tomorrow-/",
+            "sha256": "4870bcbe75f9b6319af2071e3a297ada900f93e4ca79498ef232c816f203cb24"
+          },
+          {
+            "asset": "voices/meme_unfiltered/no_tomorrow.wav",
+            "line": "There is no tomorrow!",
+            "source": "https://www.myinstants.com/en/instant/there-is-no-tomorrow-25353/",
+            "sha256": "f8c3a7cf748fadebd32b4464d30a95a40636e78924a03fd93223c365a94dbf64"
+          },
+          {
+            "asset": "voices/meme_unfiltered/tomorrow_sure.wav",
+            "line": "Tomorrow for sure.",
+            "source": "https://www.myinstants.com/en/instant/tomorrow-for-sure/",
+            "sha256": "e9cd5f5d927a0d5723afb739ba279f638bfdc3ffff5415be4863f773c573ba22"
+          },
+          {
+            "asset": "voices/meme_unfiltered/again.wav",
+            "line": "Ah shit, here we go again.",
+            "source": "https://www.myinstants.com/en/instant/ah-shit-here-we-go-again-cj-28334/",
+            "sha256": "c79767c70e8688f976b9e7ff5e3880aaa11d5d454bc62ebbe6c9e8ca6f0a0a36"
+          }
+        ],
+        "IDLE": [
+          {
+            "asset": "voices/meme_unfiltered/do_something.wav",
+            "line": "Do something!",
+            "source": "https://www.myinstants.com/en/instant/do-something-87022/",
+            "sha256": "4212160fcef3ebe42602513237e475771c2a26bb88ebc3e8090450599bc6547f"
+          },
+          {
+            "asset": "voices/meme_unfiltered/what_waiting.wav",
+            "line": "What are you waiting for?",
+            "source": "https://www.myinstants.com/en/instant/the-incredibles-what-are-you-waiting-for-42482/",
+            "sha256": "f9a3313ec36fe9f20395adbfabe78c1670afc4965d2478e51fc30ea1b75cee0e"
+          },
+          {
+            "asset": "voices/meme_unfiltered/get_on.wav",
+            "line": "Get on with it!",
+            "source": "https://www.myinstants.com/en/instant/get-on-with-it/",
+            "sha256": "30bf01d013414125e3ccd577812b5c53fb0f847e73ec3251424aa51230ddc98c"
+          },
+          {
+            "asset": "voices/meme_unfiltered/get_together.wav",
+            "line": "Get your shit together, will you?",
+            "source": "https://www.myinstants.com/de/instant/get-your-shit-together-57589/",
+            "sha256": "9ede29da4f812fba732c3172a81049a1586063bef37769d0c64ce87ba3dd5f9a"
+          },
+          {
+            "asset": "voices/meme_unfiltered/any_day.wav",
+            "line": "Any fucking day now.",
+            "source": "https://www.myinstants.com/en/instant/any-f-day-now-58563/",
+            "sha256": "535efa5b6e1890b9c853437e0fae54f5c7b6bccc7b93778d15b69b8f763f43c4"
+          }
+        ],
+        "TINY": [
+          {
+            "asset": "voices/meme_unfiltered/easy.wav",
+            "line": "Easy peasy, lemon squeezy.",
+            "source": "https://www.myinstants.com/en/instant/easy-peasy-lemon-squeezy-csgo-73385/",
+            "sha256": "adb4d85512be6f079fa6c2648f064b66f019f7733e456f1720efdf38a10e4319"
+          },
+          {
+            "asset": "voices/meme_unfiltered/do_it.wav",
+            "line": "Do it! Just do it!",
+            "source": "https://www.myinstants.com/en/instant/just-do-it/",
+            "sha256": "e5cb51b7afaf729f1ec9fbdce07dec5e38e9415ae76a3e4779ca1e0de1baab06"
+          },
+          {
+            "asset": "voices/meme_unfiltered/get_on.wav",
+            "line": "Get on with it!",
+            "source": "https://www.myinstants.com/en/instant/get-on-with-it/",
+            "sha256": "30bf01d013414125e3ccd577812b5c53fb0f847e73ec3251424aa51230ddc98c"
+          }
+        ],
+        "ABANDON": [
+          {
+            "asset": "voices/meme_unfiltered/where_going.wav",
+            "line": "Where are you going?",
+            "source": "https://www.myinstants.com/en/instant/where-are-you-going-38802/",
+            "sha256": "03f9d8da407640562baae8a9f1ab0554bd7972fdaf99451c15aefca5a1dee789"
+          },
+          {
+            "asset": "voices/meme_unfiltered/come_back.wav",
+            "line": "Come back here! Stop!",
+            "source": "https://www.myinstants.com/en/instant/come-back-here-stop-28500/",
+            "sha256": "63573e79c7876817c36226ab942446ec5196251935a9351aadf9809541077b5a"
+          }
+        ],
+        "CREATED": [
+          {
+            "asset": "voices/meme_unfiltered/another_one.wav",
+            "line": "Another one.",
+            "source": "https://www.myinstants.com/en/instant/dj-khaled-another-one/",
+            "sha256": "556a6d73c9f0481222b88a8b8d74f6b74aa48f5922365cee522daae4f11a0101"
+          },
+          {
+            "asset": "voices/meme_unfiltered/plan.wav",
+            "line": "This is the greatest plan!",
+            "source": "https://www.myinstants.com/en/instant/this-is-the-greatest-plan-38860/",
+            "sha256": "b55482d4c8bc3f6fc944db1d2ccd2b8adbc78cd28cf3958d7f91b762edaa62eb"
+          }
+        ],
+        "STARTED": [
+          {
+            "asset": "voices/meme_unfiltered/do_it.wav",
+            "line": "Do it! Just do it!",
+            "source": "https://www.myinstants.com/en/instant/just-do-it/",
+            "sha256": "e5cb51b7afaf729f1ec9fbdce07dec5e38e9415ae76a3e4779ca1e0de1baab06"
+          },
+          {
+            "asset": "voices/meme_unfiltered/get_on.wav",
+            "line": "Get on with it!",
+            "source": "https://www.myinstants.com/en/instant/get-on-with-it/",
+            "sha256": "30bf01d013414125e3ccd577812b5c53fb0f847e73ec3251424aa51230ddc98c"
+          }
+        ],
+        "COMPLETED": [
+          {
+            "asset": "voices/meme_unfiltered/did_it.wav",
+            "line": "You did it!",
+            "source": "https://www.myinstants.com/en/instant/you-did-it-69927/",
+            "sha256": "ca4b849679c11b15ae56cce2f9ac345a6c2443b4d7575ee96de51a9192f8bc68"
+          },
+          {
+            "asset": "voices/meme_unfiltered/easy.wav",
+            "line": "Easy peasy, lemon squeezy.",
+            "source": "https://www.myinstants.com/en/instant/easy-peasy-lemon-squeezy-csgo-73385/",
+            "sha256": "adb4d85512be6f079fa6c2648f064b66f019f7733e456f1720efdf38a10e4319"
+          }
+        ],
+        "COMPLETED_LATE": [
+          {
+            "asset": "voices/meme_unfiltered/finally.wav",
+            "line": "Finally!",
+            "source": "https://www.myinstants.com/en/instant/finally-6013/",
+            "sha256": "8dbd677f357fa6fcbca68098e74ce47929f0653439260848971ff61419c2e4d1"
+          },
+          {
+            "asset": "voices/meme_unfiltered/did_it.wav",
+            "line": "You did it!",
+            "source": "https://www.myinstants.com/en/instant/you-did-it-69927/",
+            "sha256": "ca4b849679c11b15ae56cce2f9ac345a6c2443b4d7575ee96de51a9192f8bc68"
+          },
+          {
+            "asset": "voices/meme_unfiltered/about_time.wav",
+            "line": "It's about damn time.",
+            "source": "https://www.myinstants.com/en/instant/lebron-about-damn-time-6916/",
+            "sha256": "c46811c471bba48a03183b8c98ba927c9ca3316762dbf1ac71a2c8758e533679"
+          }
+        ],
+        "NOTIFICATION_CLEARED": [
+          {
+            "asset": "voices/meme_unfiltered/ignore.wav",
+            "line": "Stop ignoring me!",
+            "source": "https://www.myinstants.com/en/instant/stop-ignoring-me-44631/",
+            "sha256": "25e6a5bcc73a9ab50d1e021d05749b0edc040c410a2368b36c0eb44fa5a3b1a9"
+          },
+          {
+            "asset": "voices/meme_unfiltered/come_back.wav",
+            "line": "Come back here! Stop!",
+            "source": "https://www.myinstants.com/en/instant/come-back-here-stop-28500/",
+            "sha256": "63573e79c7876817c36226ab942446ec5196251935a9351aadf9809541077b5a"
+          },
+          {
+            "asset": "voices/meme_unfiltered/where_going.wav",
+            "line": "Where are you going?",
+            "source": "https://www.myinstants.com/en/instant/where-are-you-going-38802/",
+            "sha256": "03f9d8da407640562baae8a9f1ab0554bd7972fdaf99451c15aefca5a1dee789"
+          }
+        ],
+        "NOTIFICATION_OPENED": [
+          {
+            "asset": "voices/meme_unfiltered/hello.wav",
+            "line": "Hello there!",
+            "source": "https://www.myinstants.com/en/instant/hello-there-obi-wan-39670/",
+            "sha256": "47be45c1e86c8c6976f9e2bf7eef197b92cd9a038210aa96a520079331b718ca"
+          },
+          {
+            "asset": "voices/meme_unfiltered/what_waiting.wav",
+            "line": "What are you waiting for?",
+            "source": "https://www.myinstants.com/en/instant/the-incredibles-what-are-you-waiting-for-42482/",
+            "sha256": "f9a3313ec36fe9f20395adbfabe78c1670afc4965d2478e51fc30ea1b75cee0e"
+          }
+        ],
+        "STILL_WORKING": [
+          {
+            "asset": "voices/meme_unfiltered/still_working.wav",
+            "line": "We are not done yet.",
+            "source": "https://www.myinstants.com/en/instant/we-are-not-done-yet-9675/",
+            "sha256": "b2106ffdcf0581a54150d8c47178c9d0f30bdb24b53ced12aa3c14bbc76e16f9"
+          },
+          {
+            "asset": "voices/meme_unfiltered/hurry_mario.wav",
+            "line": "Hurry up already!",
+            "source": "https://www.myinstants.com/en/instant/mario-hurry-up-already-sfx-42414/",
+            "sha256": "67d499de6563c7ad8185e416612b6175bcf8b7d26bee16d3d0ea8b612bfa133b"
+          },
+          {
+            "asset": "voices/meme_unfiltered/get_on.wav",
+            "line": "Get on with it!",
+            "source": "https://www.myinstants.com/en/instant/get-on-with-it/",
+            "sha256": "30bf01d013414125e3ccd577812b5c53fb0f847e73ec3251424aa51230ddc98c"
+          },
+          {
+            "asset": "voices/meme_unfiltered/taking_long.wav",
+            "line": "What the fuck is taking so long?",
+            "source": "https://www.myinstants.com/en/instant/wtf-is-taking-so-long-1440/",
+            "sha256": "29947ad811b439de4fea84649bd6b640b484eacf120c4b640183150411b7bf18"
+          },
+          {
+            "asset": "voices/meme_unfiltered/any_day.wav",
+            "line": "Any fucking day now.",
+            "source": "https://www.myinstants.com/en/instant/any-f-day-now-58563/",
+            "sha256": "535efa5b6e1890b9c853437e0fae54f5c7b6bccc7b93778d15b69b8f763f43c4"
+          }
+        ],
+        "LOW_PRIORITY": [
+          {
+            "asset": "voices/meme_unfiltered/is_that_all.wav",
+            "line": "Is that all you have?",
+            "source": "https://www.myinstants.com/en/instant/wesker-is-that-all/",
+            "sha256": "0d2e2b0f0a87362b5527710241646df3e0addd5b8e5bdc6c158ccc001bbdcd74"
+          },
+          {
+            "asset": "voices/meme_unfiltered/easy.wav",
+            "line": "Easy peasy, lemon squeezy.",
+            "source": "https://www.myinstants.com/en/instant/easy-peasy-lemon-squeezy-csgo-73385/",
+            "sha256": "adb4d85512be6f079fa6c2648f064b66f019f7733e456f1720efdf38a10e4319"
+          },
+          {
+            "asset": "voices/meme_unfiltered/get_on.wav",
+            "line": "Get on with it!",
+            "source": "https://www.myinstants.com/en/instant/get-on-with-it/",
+            "sha256": "30bf01d013414125e3ccd577812b5c53fb0f847e73ec3251424aa51230ddc98c"
+          }
+        ],
+        "SMALL_LIST": [
+          {
+            "asset": "voices/meme_unfiltered/is_that_all.wav",
+            "line": "Is that all you have?",
+            "source": "https://www.myinstants.com/en/instant/wesker-is-that-all/",
+            "sha256": "0d2e2b0f0a87362b5527710241646df3e0addd5b8e5bdc6c158ccc001bbdcd74"
+          },
+          {
+            "asset": "voices/meme_unfiltered/do_something.wav",
+            "line": "Do something!",
+            "source": "https://www.myinstants.com/en/instant/do-something-87022/",
+            "sha256": "4212160fcef3ebe42602513237e475771c2a26bb88ebc3e8090450599bc6547f"
+          },
+          {
+            "asset": "voices/meme_unfiltered/get_on.wav",
+            "line": "Get on with it!",
+            "source": "https://www.myinstants.com/en/instant/get-on-with-it/",
+            "sha256": "30bf01d013414125e3ccd577812b5c53fb0f847e73ec3251424aa51230ddc98c"
+          }
+        ]
+      }
+    }
+  ]
+}

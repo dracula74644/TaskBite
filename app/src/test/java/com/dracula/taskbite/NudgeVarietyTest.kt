@@ -19,6 +19,7 @@ import java.time.ZoneId
 class NudgeVarietyTest {
     @Test fun emptyListAndRepeatedDismissalsRotateAcrossFifteenMinuteCheckIns() = runBlocking {
         val app = RuntimeEnvironment.getApplication() as TaskBiteApp
+        installTestVoicePack(app)
         val p = app.preferences
         val manager = app.getSystemService(NotificationManager::class.java)
         val start = LocalDate.now().atTime(9, 0).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
@@ -28,7 +29,7 @@ class NudgeVarietyTest {
             planningNudge = false; quietEnabled = false; backgroundSince = start; lastTaskActivity = 0
             backgroundVoice = false; notificationReactions = true }
         var actorStart = start
-        for (actor in listOf("sean", "high_on_life").filter { id -> VoiceLibrary(app).actors().any { it.id == id } }) {
+        for (actor in listOf("bite_original", "meme_sidekick", "meme_unfiltered").filter { id -> VoiceLibrary(app).actors().any { it.id == id } }) {
             p.voiceActor = actor
             p.backgroundSince = actorStart
             p.lastAwayNudge = 0

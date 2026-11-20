@@ -49,8 +49,8 @@ the novelty wears off. If both deliveries feel tiring, soften the delivery
 before recording the remaining lines.
 
 Full pack
-Use recording-script.txt for all 24 lines across 12 situations. Save the
-chosen take under each listed filename. The packaging tool needs all 24
+Use recording-script.txt for all 64 lines across 16 situations. Save the
+chosen take under each listed filename. The packaging tool needs all 64
 WAV files and a performer name; it normalizes recordings and creates the
 optional Bite Originals pack. It does not create a human performance.
 
